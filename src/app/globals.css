@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #061a2f;
+  --color-brand-deepNavy: #031225;
+  --color-brand-softNavy: #0b2742;
+  --color-brand-green: #6da544;
+  --color-brand-darkGreen: #3f7426;
+  --color-brand-freshGreen: #8bc34a;
+  --color-brand-orange: #f25a1d;
+  --color-brand-orangeHover: #d94b13;
+  --color-brand-gold: #d7b35a;
+  --color-brand-white: #ffffff;
+  --color-brand-offWhite: #f7f9f5;
+  --color-brand-border: #e4e8df;
+  --color-brand-muted: #5f6b5f;
+  --color-brand-text: #0b1b2b;
+}
+
+:root {
+  --primary-navy: #061a2f;
+  --deep-navy: #031225;
+  --soft-navy: #0b2742;
+  --landscape-green: #6da544;
+  --dark-green: #3f7426;
+  --fresh-green: #8bc34a;
+  --cta-orange: #f25a1d;
+  --cta-orange-hover: #d94b13;
+  --gold-accent: #d7b35a;
+  --white: #ffffff;
+  --off-white: #f7f9f5;
+  --light-border: #e4e8df;
+  --muted-text: #5f6b5f;
+  --dark-text: #0b1b2b;
+  --background: var(--off-white);
+  --foreground: var(--dark-text);
+  --muted: #eef4e9;
+  --muted-foreground: var(--muted-text);
+  --border: var(--light-border);
+  --accent: var(--cta-orange);
+  --accent-strong: var(--cta-orange-hover);
+  --accent-foreground: var(--white);
+  --green: var(--landscape-green);
+  --green-strong: var(--dark-green);
+  --pine: var(--primary-navy);
+  --pine-soft: var(--soft-navy);
+  --sage: var(--fresh-green);
+  --ring: rgba(242, 90, 29, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(139, 195, 74, 0.28);
+}
+
+.font-heading {
+  font-family: var(--font-heading), Arial, sans-serif;
+}
+
+.section-shell {
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.star-field {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.premium-card {
+  cursor: pointer;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(109, 165, 68, 0.38);
+  box-shadow: 0 28px 80px rgba(6, 26, 47, 0.13);
+}
+
+.clip-angle {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    width: min(100% - 28px, 1280px);
+  }
+}
