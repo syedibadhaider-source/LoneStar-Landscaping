@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
-import { Facebook, Instagram, Linkedin, Mail, Star } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
 import { contactInfo, footerServices, navItems } from "@/data/site";
 
@@ -9,8 +10,14 @@ export function Footer() {
       <div className="section-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <a href="#home" className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-md border border-white/14 bg-white/8">
-              <Star className="size-6 fill-[var(--accent)] text-[var(--accent)]" />
+            <span className="grid size-12 place-items-center overflow-hidden rounded-md border border-white/14 bg-white">
+              <Image
+                src="/images/lonestar-logo.svg"
+                alt="BR Lonestar Landscaping logo"
+                width={48}
+                height={48}
+                className="size-11 object-contain"
+              />
             </span>
             <span className="leading-tight">
               <span className="font-heading block text-sm font-extrabold uppercase tracking-[0.14em]">LONESTAR</span>

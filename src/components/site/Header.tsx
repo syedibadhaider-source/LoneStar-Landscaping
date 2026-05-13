@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
-import { ArrowRight, Menu, Phone, Star, X } from "lucide-react";
+import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -14,8 +15,15 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(6,26,47,0.86)] text-white backdrop-blur-xl">
       <div className="section-shell flex h-20 items-center justify-between gap-5">
         <a href="#home" className="flex shrink-0 items-center gap-3 text-white" onClick={() => setIsOpen(false)}>
-          <span className="grid size-11 place-items-center rounded-md border border-white/20 bg-white/10 shadow-lg backdrop-blur">
-            <Star className="size-6 fill-[var(--accent)] text-[var(--accent)]" />
+          <span className="grid size-12 place-items-center overflow-hidden rounded-md border border-white/20 bg-white shadow-lg backdrop-blur">
+            <Image
+              src="/images/lonestar-logo.svg"
+              alt="BR Lonestar Landscaping logo"
+              width={48}
+              height={48}
+              className="size-11 object-contain"
+              priority
+            />
           </span>
           <span className="leading-tight">
             <span className="font-heading block text-sm font-extrabold uppercase tracking-[0.14em]">LONESTAR</span>
