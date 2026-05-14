@@ -12,7 +12,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-white/92 text-[var(--text)] shadow-[0_10px_34px_rgba(3,18,37,0.08)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[rgba(3,18,37,0.12)] bg-white text-[var(--navy)] shadow-[0_10px_34px_rgba(3,18,37,0.08)]">
       <div className="section-shell flex h-20 items-center justify-between gap-5">
         <a href="#home" className="flex shrink-0 items-center" onClick={() => setIsOpen(false)}>
           <Image
@@ -25,9 +25,9 @@ export function Header() {
           />
         </a>
 
-        <nav className="hidden flex-1 items-center justify-center gap-7 text-sm font-semibold text-[var(--muted)] lg:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-7 text-sm font-bold text-[var(--navy)] lg:flex">
           {navItems.map((item) => (
-            <a key={item.label} className="group relative py-2 transition hover:text-[var(--navy)]" href={item.href}>
+            <a key={item.label} className="group relative py-2 transition hover:text-[var(--dark-green)]" href={item.href}>
               {item.label}
               <span
                 className={
@@ -41,7 +41,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <a href={contactInfo.officeHref} className="flex items-center gap-2 text-sm font-semibold text-[var(--navy)] transition hover:text-[var(--green)]">
+          <a href={contactInfo.officeHref} className="flex items-center gap-2 text-sm font-bold text-[var(--navy)] transition hover:text-[var(--dark-green)]">
             <span className="grid size-9 place-items-center rounded-md border border-[var(--border)] bg-[var(--off-white)]">
               <Phone className="size-4 text-[var(--dark-green)]" />
             </span>
@@ -80,7 +80,7 @@ export function Header() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-between rounded-md px-4 py-3 text-sm font-semibold text-[var(--muted)] transition hover:bg-[var(--off-white)] hover:text-[var(--navy)]"
+                  className="flex items-center justify-between rounded-md px-4 py-3 text-sm font-bold text-[var(--navy)] transition hover:bg-[var(--off-white)] hover:text-[var(--dark-green)]"
                 >
                   {item.label}
                   {item.active ? <span className="h-1.5 w-8 rounded-full bg-[var(--green)]" /> : null}
