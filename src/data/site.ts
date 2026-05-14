@@ -33,6 +33,27 @@ export const propertyTypes: IconItem[] = [
   { icon: ShieldCheck, label: "Gated Communities" },
 ];
 
+export const heroSlides = [
+  {
+    image: "/images/hero-landscape.jpg",
+    alt: "Luxury property exterior at dusk with maintained landscaping, warm lighting, pathways, and colorful flowers",
+    label: "Full Maintenance Plans",
+    text: "HOA entrances, common areas, and grounds kept clean year round.",
+  },
+  {
+    image: "/images/hero-commercial.jpg",
+    alt: "Modern commercial office property with maintained lawns, hedges, flower beds, and walkways",
+    label: "Commercial Property Care",
+    text: "Sharp lawns, seasonal color, irrigation, and site-ready curb appeal.",
+  },
+  {
+    image: "/images/hero-gated-community.jpg",
+    alt: "Upscale gated community entrance with manicured turf, trimmed shrubs, flowers, and landscape lighting",
+    label: "Gated Community Landscaping",
+    text: "Premium entrances, pathways, beds, and lighting maintained with care.",
+  },
+];
+
 export const services = [
   {
     icon: Leaf,

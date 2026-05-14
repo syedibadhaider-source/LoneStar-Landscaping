@@ -8,26 +8,28 @@ export function Footer() {
   return (
     <footer className="bg-[var(--deep-navy)] text-white">
       <div className="section-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <a href="#home" className="flex items-center gap-3">
-            <span className="grid size-12 place-items-center overflow-hidden rounded-md border border-white/14 bg-white">
-              <Image
-                src="/images/lonestar-logo.png"
-                alt="BR Lonestar Landscaping logo"
-                width={48}
-                height={48}
-                className="size-11 object-contain"
-              />
-            </span>
-            <span className="leading-tight">
-              <span className="font-heading block text-sm font-extrabold uppercase tracking-[0.14em]">LONESTAR</span>
-              <span className="block text-xs text-white/58">Landscaping & Property Maintenance</span>
-            </span>
+        <div className="relative overflow-hidden">
+          <a href="#home" className="inline-flex rounded-lg border border-white/14 bg-white px-4 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
+            <Image
+              src="/images/lonestar-logo-full.svg"
+              alt="BR Lonestar Landscaping & Property Maintenance logo"
+              width={240}
+              height={90}
+              className="h-14 w-auto max-w-[220px] object-contain"
+            />
           </a>
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/62">
             Professional landscaping and property maintenance for HOAs, commercial properties, and
             managed communities across North Texas.
           </p>
+          <Image
+            src="/images/lonestar-icon.svg"
+            alt=""
+            width={120}
+            height={118}
+            className="pointer-events-none absolute right-2 top-24 h-24 w-24 opacity-10"
+            aria-hidden="true"
+          />
           <div className="mt-6 flex gap-3">
             {[
               { icon: Facebook, label: "Facebook" },
