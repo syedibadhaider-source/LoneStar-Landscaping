@@ -3,10 +3,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, CalendarCheck, MapPin, ShieldCheck } from "lucide-react";
+import { MapPin, ShieldCheck } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { heroFadeUp, heroParent } from "@/components/site/motion";
 import { heroSlides } from "@/data/site";
 
@@ -92,21 +91,6 @@ export function Hero() {
               <span className="font-heading block text-[20px] font-extrabold text-white">40 Years Combined</span>
               <span className="block text-sm font-semibold text-white/70">HOA & Commercial Experience</span>
             </span>
-          </motion.div>
-
-          <motion.div variants={heroFadeUp} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild>
-              <a href="#quote">
-                Get a Free Quote
-                <CalendarCheck />
-              </a>
-            </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a href="#services">
-                View Services
-                <ArrowRight />
-              </a>
-            </Button>
           </motion.div>
 
           <motion.div variants={heroFadeUp} className="mt-8 flex items-center gap-3" aria-label="Hero image slider controls">
