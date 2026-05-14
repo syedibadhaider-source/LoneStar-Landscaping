@@ -12,7 +12,7 @@ export function Footer() {
           <a href="#home" className="flex items-center gap-3">
             <span className="grid size-12 place-items-center overflow-hidden rounded-md border border-white/14 bg-white">
               <Image
-                src="/images/lonestar-logo.svg"
+                src="/images/lonestar-logo.png"
                 alt="BR Lonestar Landscaping logo"
                 width={48}
                 height={48}

@@ -17,7 +17,7 @@ export function Header() {
         <a href="#home" className="flex shrink-0 items-center gap-3 text-white" onClick={() => setIsOpen(false)}>
           <span className="grid size-12 place-items-center overflow-hidden rounded-md border border-white/20 bg-white shadow-lg backdrop-blur">
             <Image
-              src="/images/lonestar-logo.svg"
+              src="/images/lonestar-logo.png"
               alt="BR Lonestar Landscaping logo"
               width={48}
               height={48}
