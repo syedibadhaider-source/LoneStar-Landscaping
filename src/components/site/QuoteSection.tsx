@@ -144,17 +144,27 @@ export function QuoteSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="overflow-hidden rounded-2xl bg-[var(--pine)] p-6 text-white shadow-[0_24px_80px_rgba(6,26,47,0.18)]"
+          className="flex overflow-hidden rounded-2xl bg-[var(--pine)] text-white shadow-[0_24px_80px_rgba(6,26,47,0.18)]"
         >
-          <h3 className="font-heading text-[22px] font-extrabold">Contact Information</h3>
-          <div className="mt-7 grid gap-5">
-            <ContactItem icon={MapPin} label="Address">{contactInfo.address}</ContactItem>
-            <ContactItem icon={Phone} label="Office">{contactInfo.office}</ContactItem>
-            <ContactItem icon={Phone} label="Cell">{contactInfo.cell}</ContactItem>
-            <ContactItem icon={Mail} label="Email">{contactInfo.email}</ContactItem>
-          </div>
-          <div className="mt-8 overflow-hidden rounded-xl">
-            <Image src="/images/gallery-2.jpg" alt="Small landscaping plant detail" width={520} height={300} className="h-36 w-full object-cover opacity-88" />
+          <div className="flex min-h-full w-full flex-col">
+            <div className="p-6 pb-0">
+              <h3 className="font-heading text-[22px] font-extrabold">Contact Information</h3>
+              <div className="mt-7 grid gap-5">
+                <ContactItem icon={MapPin} label="Address">{contactInfo.address}</ContactItem>
+                <ContactItem icon={Phone} label="Office">{contactInfo.office}</ContactItem>
+                <ContactItem icon={Phone} label="Cell">{contactInfo.cell}</ContactItem>
+                <ContactItem icon={Mail} label="Email">{contactInfo.email}</ContactItem>
+              </div>
+            </div>
+            <div className="relative mt-8 min-h-[420px] flex-1">
+              <Image
+                src="/images/contact-representative.jpg"
+                alt="BR Lonestar team member ready to help with quote requests"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              />
+            </div>
           </div>
         </motion.aside>
       </div>
