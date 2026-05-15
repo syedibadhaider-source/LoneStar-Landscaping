@@ -45,7 +45,6 @@ export function AboutSection() {
           className="relative min-h-[520px] overflow-hidden rounded-2xl bg-[var(--muted)] shadow-[0_24px_80px_rgba(22,33,66,0.14)]"
         >
           <Image
-            // TODO: Replace with a real BR Lonestar crew and property manager photo.
             src="/images/about-team.jpg"
             alt="Professional landscaper walking a maintained property with a property manager"
             fill
