@@ -15,6 +15,7 @@ export type TeamMember = {
   name: string;
   role: string;
   image: string;
+  imagePosition?: string;
   mobile: string;
   office?: string;
   email: string;
@@ -158,6 +159,7 @@ export const teamMembers: TeamMember[] = [
     role: "President",
     image:
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85",
+    imagePosition: "center 16%",
     mobile: "214-901-7228",
     office: "214-790-7996",
     email: "bill@brlonestar.com",
@@ -168,6 +170,7 @@ export const teamMembers: TeamMember[] = [
     role: "Vice President",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85",
+    imagePosition: "center 16%",
     mobile: "903-456-4060",
     email: "rodney@brlonestar.com",
     address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
@@ -177,6 +180,7 @@ export const teamMembers: TeamMember[] = [
     role: "Vice President, Sales & Marketing",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
+    imagePosition: "center 14%",
     mobile: "713-252-3326",
     email: "rose@brlonestar.com",
     address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
