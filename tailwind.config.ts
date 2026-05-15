@@ -6,14 +6,14 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          navy: "#061A2F",
-          deepNavy: "#031225",
-          softNavy: "#0B2742",
-          green: "#6DA544",
-          darkGreen: "#3F7426",
-          freshGreen: "#8BC34A",
-          orange: "#F25A1D",
-          orangeHover: "#D94B13",
+          navy: "#162142",
+          deepNavy: "#162142",
+          softNavy: "#162142",
+          green: "#3D7123",
+          darkGreen: "#3D7123",
+          freshGreen: "#3D7123",
+          orange: "#F25B1E",
+          orangeHover: "#F25B1E",
           gold: "#D7B35A",
           white: "#FFFFFF",
           offWhite: "#F7F9F5",

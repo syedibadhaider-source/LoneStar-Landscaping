@@ -18,7 +18,7 @@ export function WhyChooseSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="overflow-hidden rounded-2xl bg-[var(--pine)] p-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_30px_100px_rgba(6,26,47,0.18)] md:p-10"
+          className="overflow-hidden rounded-2xl bg-[var(--pine)] p-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_30px_100px_rgba(22,33,66,0.18)] md:p-10"
         >
           <h2 className="font-heading text-center text-[26px] font-extrabold leading-tight sm:text-[30px] lg:text-[44px]">
             Why choose BR Lonestar?
@@ -36,7 +36,7 @@ export function WhyChooseSection() {
                 <motion.span
                   variants={{ hover: { scale: 1.1 } }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="grid size-10 place-items-center rounded-full bg-[var(--green)] text-white shadow-[0_10px_28px_rgba(109,165,68,0.28)]"
+                  className="grid size-10 place-items-center rounded-full bg-[var(--green)] text-white shadow-[0_10px_28px_rgba(61,113,35,0.28)]"
                 >
                   <Check className="size-5" />
                 </motion.span>

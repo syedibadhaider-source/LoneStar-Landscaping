@@ -7,7 +7,7 @@ export function CtaBanner() {
   return (
     <section className="bg-white py-16">
       <div className="section-shell">
-        <div className="relative overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#F25A1D,#D94B13)] shadow-[0_26px_80px_rgba(242,90,29,0.24)]">
+        <div className="relative overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#F25B1E,#F25B1E)] shadow-[0_26px_80px_rgba(242,91,30,0.24)]">
           <div className="absolute -right-12 -top-16 size-48 rounded-full bg-white/10" />
           <div className="absolute bottom-4 right-40 size-24 rounded-full border border-white/14" />
           <div className="absolute -bottom-20 left-1/3 size-52 rounded-full bg-white/8" />

@@ -122,10 +122,10 @@ export function QuoteSection() {
               </FormField>
               <div aria-live="polite">
                 {formError ? (
-                  <p className="rounded-md border border-[rgba(242,90,29,0.24)] bg-[rgba(242,90,29,0.08)] px-3 py-2 text-sm font-semibold text-[var(--accent-strong)]">{formError}</p>
+                  <p className="rounded-md border border-[rgba(242,91,30,0.24)] bg-[rgba(242,91,30,0.08)] px-3 py-2 text-sm font-semibold text-[var(--accent-strong)]">{formError}</p>
                 ) : null}
                 {isSubmitted ? (
-                  <p className="rounded-md border border-[rgba(109,165,68,0.28)] bg-[rgba(109,165,68,0.1)] px-3 py-2 text-sm font-semibold text-[var(--green-strong)]">
+                  <p className="rounded-md border border-[rgba(61,113,35,0.28)] bg-[rgba(61,113,35,0.1)] px-3 py-2 text-sm font-semibold text-[var(--green-strong)]">
                     Thank you! Your quote request has been received.
                   </p>
                 ) : null}
@@ -144,7 +144,7 @@ export function QuoteSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="flex overflow-hidden rounded-2xl bg-[var(--pine)] text-white shadow-[0_24px_80px_rgba(6,26,47,0.18)]"
+          className="flex overflow-hidden rounded-2xl bg-[var(--pine)] text-white shadow-[0_24px_80px_rgba(22,33,66,0.18)]"
         >
           <div className="flex min-h-full w-full flex-col">
             <div className="p-6 pb-0">

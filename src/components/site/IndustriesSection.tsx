@@ -34,7 +34,7 @@ export function IndustriesSection() {
               <motion.div
                 whileHover={shouldReduceMotion ? undefined : cardHover}
                 transition={cardHoverTransition}
-                className="group flex h-full flex-col rounded-[28px] border border-[rgba(228,232,223,0.9)] bg-[#F4FAE8] p-4 shadow-[0_22px_70px_rgba(6,26,47,0.08)] transition hover:shadow-[0_30px_90px_rgba(6,26,47,0.14)] sm:p-5 xl:p-3"
+                className="group flex h-full flex-col rounded-[28px] border border-[rgba(228,232,223,0.9)] bg-[#F4FAE8] p-4 shadow-[0_22px_70px_rgba(22,33,66,0.08)] transition hover:shadow-[0_30px_90px_rgba(22,33,66,0.14)] sm:p-5 xl:p-3"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-white xl:rounded-[20px]">
                   <motion.div className="absolute inset-0" whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }} transition={{ duration: 0.6, ease: "easeOut" }}>

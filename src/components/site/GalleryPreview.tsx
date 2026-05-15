@@ -40,7 +40,7 @@ export function GalleryPreview() {
               variants={fadeUp}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
             >
-              <motion.div whileHover={shouldReduceMotion ? undefined : cardHover} transition={cardHoverTransition} className="group relative h-64 overflow-hidden rounded-xl bg-white shadow-[0_22px_70px_rgba(6,26,47,0.1)]">
+              <motion.div whileHover={shouldReduceMotion ? undefined : cardHover} transition={cardHoverTransition} className="group relative h-64 overflow-hidden rounded-xl bg-white shadow-[0_22px_70px_rgba(22,33,66,0.1)]">
                 <motion.div className="absolute inset-0" whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }} transition={{ duration: 0.6, ease: "easeOut" }}>
                   <Image
                     src={image.src}

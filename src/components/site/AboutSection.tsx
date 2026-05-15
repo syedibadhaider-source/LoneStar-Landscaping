@@ -42,7 +42,7 @@ export function AboutSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="relative min-h-[520px] overflow-hidden rounded-2xl bg-[var(--muted)] shadow-[0_24px_80px_rgba(6,26,47,0.14)]"
+          className="relative min-h-[520px] overflow-hidden rounded-2xl bg-[var(--muted)] shadow-[0_24px_80px_rgba(22,33,66,0.14)]"
         >
           <Image
             // TODO: Replace with a real BR Lonestar crew and property manager photo.
@@ -52,8 +52,8 @@ export function AboutSection() {
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(3,18,37,0.35),rgba(3,18,37,0.02)_62%)]" />
-          <div className="absolute bottom-6 left-6 rounded-lg bg-[var(--green-strong)] px-5 py-4 text-white shadow-[0_18px_46px_rgba(3,18,37,0.22)]">
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(22,33,66,0.35),rgba(22,33,66,0.02)_62%)]" />
+          <div className="absolute bottom-6 left-6 rounded-lg bg-[var(--green-strong)] px-5 py-4 text-white shadow-[0_18px_46px_rgba(22,33,66,0.22)]">
             <p className="font-heading max-w-xs text-[15px] font-bold leading-6">
               Trusted by managed properties across Texas
             </p>

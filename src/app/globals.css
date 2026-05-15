@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #061a2f;
-  --color-brand-deepNavy: #031225;
-  --color-brand-softNavy: #0b2742;
-  --color-brand-green: #6da544;
-  --color-brand-darkGreen: #3f7426;
-  --color-brand-freshGreen: #8bc34a;
-  --color-brand-orange: #f25a1d;
-  --color-brand-orangeHover: #d94b13;
+  --color-brand-navy: #162142;
+  --color-brand-deepNavy: #162142;
+  --color-brand-softNavy: #162142;
+  --color-brand-green: #3d7123;
+  --color-brand-darkGreen: #3d7123;
+  --color-brand-freshGreen: #3d7123;
+  --color-brand-orange: #f25b1e;
+  --color-brand-orangeHover: #f25b1e;
   --color-brand-gold: #d7b35a;
   --color-brand-white: #ffffff;
   --color-brand-offWhite: #f7f9f5;
@@ -18,14 +18,14 @@
 }
 
 :root {
-  --primary-navy: #061a2f;
-  --deep-navy: #031225;
-  --soft-navy: #0b2742;
-  --landscape-green: #6da544;
-  --dark-green: #3f7426;
-  --fresh-green: #8bc34a;
-  --cta-orange: #f25a1d;
-  --cta-orange-hover: #d94b13;
+  --primary-navy: #162142;
+  --deep-navy: #162142;
+  --soft-navy: #162142;
+  --landscape-green: #3d7123;
+  --dark-green: #3d7123;
+  --fresh-green: #3d7123;
+  --cta-orange: #f25b1e;
+  --cta-orange-hover: #f25b1e;
   --gold-accent: #d7b35a;
   --white: #ffffff;
   --off-white: #f7f9f5;
@@ -45,7 +45,7 @@
   --pine: var(--primary-navy);
   --pine-soft: var(--soft-navy);
   --sage: var(--fresh-green);
-  --ring: rgba(242, 90, 29, 0.28);
+  --ring: rgba(242, 91, 30, 0.28);
 }
 
 * {
@@ -71,7 +71,7 @@ select {
 }
 
 ::selection {
-  background: rgba(139, 195, 74, 0.28);
+  background: rgba(61, 113, 35, 0.22);
 }
 
 .font-heading {
@@ -100,8 +100,8 @@ select {
 
 .premium-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(109, 165, 68, 0.38);
-  box-shadow: 0 28px 80px rgba(6, 26, 47, 0.13);
+  border-color: rgba(61, 113, 35, 0.38);
+  box-shadow: 0 28px 80px rgba(22, 33, 66, 0.13);
 }
 
 .clip-angle {

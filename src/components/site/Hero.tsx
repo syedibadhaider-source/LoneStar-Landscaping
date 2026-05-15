@@ -49,8 +49,8 @@ export function Hero() {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,26,47,0.97)_0%,rgba(6,26,47,0.86)_43%,rgba(6,26,47,0.34)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_32%,rgba(109,165,68,0.18),transparent_28%),radial-gradient(circle_at_72%_18%,rgba(242,90,29,0.1),transparent_22%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,33,66,0.97)_0%,rgba(22,33,66,0.86)_43%,rgba(22,33,66,0.34)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_32%,rgba(61,113,35,0.18),transparent_28%),radial-gradient(circle_at_72%_18%,rgba(242,91,30,0.1),transparent_22%)]" />
       <div className="absolute inset-0 star-field opacity-45" />
 
       <div className="section-shell relative z-10 flex min-h-0 items-center lg:min-h-[680px]">
@@ -84,7 +84,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div variants={heroFadeUp} className="mt-7 inline-flex items-center gap-4 rounded-lg border border-white/14 bg-white/10 p-4 pr-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur">
-            <span className="grid size-11 place-items-center rounded-md bg-[rgba(109,165,68,0.18)] text-[var(--fresh-green)]">
+            <span className="grid size-11 place-items-center rounded-md bg-[rgba(61,113,35,0.18)] text-[var(--fresh-green)]">
               <ShieldCheck className="size-6" />
             </span>
             <span className="leading-tight">
