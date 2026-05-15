@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/site/AboutSection";
+import { ChatWidget } from "@/components/site/ChatWidget";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { Footer } from "@/components/site/Footer";
 import { GalleryPreview } from "@/components/site/GalleryPreview";
@@ -24,6 +25,7 @@ export default function Home() {
       <CtaBanner />
       <QuoteSection />
       <Footer />
+      <ChatWidget />
     </main>
   );
 }

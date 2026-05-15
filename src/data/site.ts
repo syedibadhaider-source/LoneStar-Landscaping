@@ -198,6 +198,7 @@ export const contactInfo = {
   officeHref: "tel:+12147907996",
   cell: "214-901-7228",
   cellHref: "tel:+12149017228",
+  whatsappHref: "https://wa.me/12149017228?text=Hi%20BR%20Lonestar%2C%20I%20need%20urgent%20landscaping%20or%20property%20maintenance%20help.",
   email: "info@brlonestar.com",
   emailHref: "mailto:info@brlonestar.com",
 };
