@@ -8,11 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
 import { services } from "@/data/site";
 
-const serviceCardStyles = [
-  "bg-[var(--green)] shadow-[0_24px_70px_rgba(61,113,35,0.22)] hover:shadow-[0_30px_90px_rgba(61,113,35,0.32)]",
-  "bg-[var(--soft-navy)] shadow-[0_24px_70px_rgba(22,33,66,0.22)] hover:shadow-[0_30px_90px_rgba(22,33,66,0.32)]",
-  "bg-[var(--accent)] shadow-[0_24px_70px_rgba(242,91,30,0.22)] hover:shadow-[0_30px_90px_rgba(242,91,30,0.32)]",
-];
+const serviceCardStyle =
+  "bg-[var(--accent)] shadow-[0_24px_70px_rgba(242,91,30,0.22)] hover:shadow-[0_30px_90px_rgba(242,91,30,0.32)]";
 
 export function ServicesSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -31,14 +28,14 @@ export function ServicesSection() {
         </div>
 
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={fadeUp}
               transition={{ duration: shouldReduceMotion ? 0 : 0.55, ease: "easeOut" }}
             >
               <motion.div whileHover={shouldReduceMotion ? undefined : cardHover} transition={cardHoverTransition} className="h-full">
-                <Card className={`h-full rounded-2xl border-white/20 ${serviceCardStyles[index % serviceCardStyles.length]}`}>
+                <Card className={`h-full rounded-2xl border-white/20 ${serviceCardStyle}`}>
                   <CardContent className="flex h-full flex-col items-center p-6 text-center">
                     <span className="grid size-14 place-items-center rounded-2xl bg-white/16 text-white ring-1 ring-white/20">
                       <service.icon className="size-7" strokeWidth={1.8} />
