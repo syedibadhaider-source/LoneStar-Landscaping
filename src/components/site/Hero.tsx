@@ -56,24 +56,18 @@ export function Hero() {
           <motion.h1 variants={heroFadeUp} className="font-heading max-w-4xl text-[42px] font-extrabold leading-[1.03] text-white md:text-[64px] lg:text-[76px] xl:text-[86px]">
             Your Property.
             <br />
-            <motion.span
-              className="inline-block text-[var(--accent)]"
-              animate={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                      opacity: [0.92, 1, 0.92],
-                      textShadow: [
-                        "0 0 0 rgba(242,91,30,0)",
-                        "0 0 26px rgba(242,91,30,0.32)",
-                        "0 0 0 rgba(242,91,30,0)",
-                      ],
-                    }
-              }
-              transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity }}
-            >
+            <span className="relative inline-block text-transparent">
               Perfectly Maintained.
-            </motion.span>
+              <motion.span
+                aria-hidden="true"
+                className="absolute inset-y-0 left-0 overflow-hidden whitespace-nowrap border-r-[0.08em] border-[var(--accent)] text-[var(--accent)]"
+                initial={shouldReduceMotion ? { width: "100%" } : { width: "0%" }}
+                animate={shouldReduceMotion ? { width: "100%" } : { width: ["0%", "100%"] }}
+                transition={{ duration: shouldReduceMotion ? 0 : 3.4, ease: "linear", repeat: Infinity, repeatDelay: 0 }}
+              >
+                Perfectly Maintained.
+              </motion.span>
+            </span>
           </motion.h1>
 
           <motion.p variants={heroFadeUp} className="mt-7 max-w-xl text-[17px] leading-8 text-white/82 md:text-[20px]">
