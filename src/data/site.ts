@@ -11,6 +11,16 @@ export type ServiceItem = {
   text: string;
 };
 
+export type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  mobile: string;
+  office?: string;
+  email: string;
+  address: string;
+};
+
 export const navItems = [
   { label: "Home", href: "#home", active: true },
   { label: "About", href: "#about" },
@@ -139,6 +149,37 @@ export const benefits = [
   {
     title: "Industry Understanding",
     text: "Deep knowledge of HOA and commercial properties.",
+  },
+];
+
+export const teamMembers: TeamMember[] = [
+  {
+    name: "Bill Rushakoff",
+    role: "President",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85",
+    mobile: "214-901-7228",
+    office: "214-790-7996",
+    email: "bill@brlonestar.com",
+    address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
+  },
+  {
+    name: "Rodney Riepenhoff",
+    role: "Vice President",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85",
+    mobile: "903-456-4060",
+    email: "rodney@brlonestar.com",
+    address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
+  },
+  {
+    name: "Rose McCarty",
+    role: "Vice President, Sales & Marketing",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
+    mobile: "713-252-3326",
+    email: "rose@brlonestar.com",
+    address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
   },
 ];
 

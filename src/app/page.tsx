@@ -10,6 +10,7 @@ import { PropertyTypes } from "@/components/site/PropertyTypes";
 import { QuoteSection } from "@/components/site/QuoteSection";
 import { ServicesSection } from "@/components/site/ServicesSection";
 import { WhyChooseSection } from "@/components/site/WhyChooseSection";
+import { TeamSection } from "@/components/ui/team";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ServicesSection />
       <IndustriesSection />
       <WhyChooseSection />
+      <TeamSection />
       <GalleryPreview />
       <CtaBanner />
       <QuoteSection />
