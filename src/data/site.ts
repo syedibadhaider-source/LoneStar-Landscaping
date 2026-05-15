@@ -1,20 +1,14 @@
-import {
-  Building2,
-  DraftingCompass,
-  Droplets,
-  Flower2,
-  House,
-  Leaf,
-  ShieldCheck,
-  ShoppingBag,
-  Trees,
-  UsersRound,
-  type LucideIcon,
-} from "lucide-react";
+import { type FilledIconName } from "@/components/site/FilledIcon";
 
 export type IconItem = {
-  icon: LucideIcon;
+  icon: FilledIconName;
   label: string;
+};
+
+export type ServiceItem = {
+  icon: FilledIconName;
+  title: string;
+  text: string;
 };
 
 export const navItems = [
@@ -27,10 +21,10 @@ export const navItems = [
 ];
 
 export const propertyTypes: IconItem[] = [
-  { icon: UsersRound, label: "HOA Communities" },
-  { icon: Building2, label: "Commercial Properties" },
-  { icon: ShoppingBag, label: "Shopping Centers" },
-  { icon: ShieldCheck, label: "Gated Communities" },
+  { icon: "users", label: "HOA Communities" },
+  { icon: "building", label: "Commercial Properties" },
+  { icon: "shopping-bag", label: "Shopping Centers" },
+  { icon: "shield", label: "Gated Communities" },
 ];
 
 export const heroSlides = [
@@ -54,34 +48,34 @@ export const heroSlides = [
   },
 ];
 
-export const services = [
+export const services: ServiceItem[] = [
   {
-    icon: Leaf,
+    icon: "leaf",
     title: "Lawn Care & Maintenance",
     text: "Healthy lawns and sharp curb appeal all year long.",
   },
   {
-    icon: DraftingCompass,
+    icon: "compass",
     title: "Landscape Design & Installation",
     text: "Custom designs and expert installations that impress.",
   },
   {
-    icon: Trees,
+    icon: "tree",
     title: "Tree & Shrub Care",
     text: "Pruning, trimming, and care for healthy, beautiful trees.",
   },
   {
-    icon: Droplets,
+    icon: "droplet",
     title: "Irrigation Systems",
     text: "Efficient systems that conserve water and time.",
   },
   {
-    icon: Flower2,
+    icon: "flower",
     title: "Seasonal Cleanups",
     text: "Keep properties clean and well-maintained in every season.",
   },
   {
-    icon: House,
+    icon: "home",
     title: "Property Maintenance",
     text: "Reliable maintenance for grounds and common areas.",
   },

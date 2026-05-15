@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { contactInfo, navItems } from "@/data/site";
 
 export function Header() {
@@ -43,14 +43,14 @@ export function Header() {
         <div className="hidden items-center gap-4 lg:flex">
           <a href={contactInfo.officeHref} className="flex items-center gap-2 text-sm font-bold text-[var(--pine)] transition hover:text-[var(--dark-green)]">
             <span className="grid size-9 place-items-center rounded-md border border-[var(--border)] bg-[var(--off-white)]">
-              <Phone className="size-4 text-[var(--dark-green)]" />
+              <FilledIcon name="phone" className="size-4 text-[var(--dark-green)]" />
             </span>
             <span>Office: {contactInfo.office}</span>
           </a>
           <Button size="sm" asChild>
             <a href="#quote">
               Get a Free Quote
-              <ArrowRight />
+              <FilledIcon name="arrow" />
             </a>
           </Button>
         </div>
@@ -62,7 +62,7 @@ export function Header() {
           onClick={() => setIsOpen((open) => !open)}
           className="grid size-11 place-items-center rounded-md border border-[var(--border)] bg-[var(--off-white)] text-[var(--pine)] transition hover:border-[var(--green)] hover:bg-white lg:hidden"
         >
-          {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          {isOpen ? <FilledIcon name="x" className="size-5" /> : <FilledIcon name="menu" className="size-5" />}
         </button>
       </div>
 
@@ -89,13 +89,13 @@ export function Header() {
             </nav>
             <div className="mt-3 border-t border-[var(--border)] pt-4">
               <a href={contactInfo.officeHref} className="flex items-center gap-3 rounded-md px-4 py-3 text-sm font-semibold text-[var(--pine)]">
-                <Phone className="size-4 text-[var(--dark-green)]" />
+                <FilledIcon name="phone" className="size-4 text-[var(--dark-green)]" />
                 Office: {contactInfo.office}
               </a>
               <Button className="mt-3 w-full" asChild>
                 <a href="#quote" onClick={() => setIsOpen(false)}>
                   Get a Free Quote
-                  <ArrowRight />
+                  <FilledIcon name="arrow" />
                 </a>
               </Button>
             </div>

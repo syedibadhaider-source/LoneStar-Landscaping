@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Leaf } from "lucide-react";
 
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
 import { industries } from "@/data/site";
@@ -16,7 +16,7 @@ export function IndustriesSection() {
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
           <Badge>
-            <Leaf className="size-3.5 text-[var(--green)]" />
+            <FilledIcon name="leaf" className="size-3.5 text-[var(--green)]" />
             Industries we serve
           </Badge>
           <h2 className="font-heading mt-5 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
@@ -56,7 +56,7 @@ export function IndustriesSection() {
                     className="mt-auto inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--accent-strong)] sm:text-base xl:px-4 xl:py-2.5 xl:text-sm"
                   >
                     Learn More
-                    <ArrowRight className="size-4" />
+                    <FilledIcon name="arrow" className="size-4" />
                   </a>
                 </div>
               </motion.div>

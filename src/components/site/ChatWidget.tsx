@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ClipboardCheck, MessageCircle, Send, X } from "lucide-react";
 
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { contactInfo } from "@/data/site";
 
 export function ChatWidget() {
@@ -35,10 +35,10 @@ export function ChatWidget() {
                 className="flex items-center justify-between gap-4 rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(242,91,30,0.28)]"
               >
                 <span className="flex items-center gap-3">
-                  <MessageCircle className="size-5" />
+                  <FilledIcon name="chat" className="size-5" />
                   Urgent WhatsApp Contact
                 </span>
-                <Send className="size-4" />
+                <FilledIcon name="send" className="size-4" />
               </a>
               <a
                 href="#quote"
@@ -46,10 +46,10 @@ export function ChatWidget() {
                 className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--off-white)] px-4 py-3 text-sm font-extrabold text-[var(--pine)] transition hover:-translate-y-0.5 hover:border-[var(--green)] hover:bg-white"
               >
                 <span className="flex items-center gap-3">
-                  <ClipboardCheck className="size-5 text-[var(--green)]" />
+                  <FilledIcon name="clipboard" className="size-5 text-[var(--green)]" />
                   Submit Form
                 </span>
-                <Send className="size-4" />
+                <FilledIcon name="send" className="size-4" />
               </a>
             </div>
           </motion.div>
@@ -76,7 +76,7 @@ export function ChatWidget() {
           transition={{ duration: 1.7, ease: "easeOut", repeat: Infinity }}
         />
         <span className="relative">
-          {isOpen ? <X className="size-7" /> : <MessageCircle className="size-7" />}
+          {isOpen ? <FilledIcon name="x" className="size-7" /> : <FilledIcon name="chat" className="size-7" />}
         </span>
       </motion.button>
     </div>

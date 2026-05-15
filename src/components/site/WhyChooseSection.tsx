@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Check } from "lucide-react";
 
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { fadeUp } from "@/components/site/motion";
 import { benefits } from "@/data/site";
 
@@ -95,7 +95,7 @@ export function WhyChooseSection() {
                     transition={{ duration: shouldReduceMotion ? 0 : 0.28, delay: 0.6 + index * 0.22, ease: "easeOut" }}
                     className="absolute inset-0 grid place-items-center"
                   >
-                    <Check className="size-5" />
+                    <FilledIcon name="check" className="size-5" />
                   </motion.span>
                 </motion.span>
                 <div className="pt-1 xl:pt-7">

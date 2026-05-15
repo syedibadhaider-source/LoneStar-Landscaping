@@ -1,8 +1,15 @@
 import { type ReactNode } from "react";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
+import { FilledIcon, type FilledIconName } from "@/components/site/FilledIcon";
 import { contactInfo, footerServices, navItems } from "@/data/site";
+
+const socialLinks: { icon: FilledIconName; label: string; href: string }[] = [
+  { icon: "facebook", label: "Facebook", href: "#" },
+  { icon: "instagram", label: "Instagram", href: "#" },
+  { icon: "linkedin", label: "LinkedIn", href: "#" },
+  { icon: "mail", label: "Email", href: contactInfo.emailHref },
+];
 
 export function Footer() {
   return (
@@ -31,19 +38,14 @@ export function Footer() {
             aria-hidden="true"
           />
           <div className="mt-6 flex gap-3">
-            {[
-              { icon: Facebook, label: "Facebook" },
-              { icon: Instagram, label: "Instagram" },
-              { icon: Linkedin, label: "LinkedIn" },
-              { icon: Mail, label: "Email" },
-            ].map((item) => (
+            {socialLinks.map((item) => (
               <a
                 key={item.label}
-                href={item.label === "Email" ? contactInfo.emailHref : "#"}
+                href={item.href}
                 aria-label={item.label}
                 className="grid size-10 place-items-center rounded-md border border-white/12 bg-white/7 text-white/72 transition hover:-translate-y-0.5 hover:border-[var(--green)] hover:text-white"
               >
-                <item.icon className="size-4" />
+                <FilledIcon name={item.icon} className="size-4" />
               </a>
             ))}
           </div>

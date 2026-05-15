@@ -1,5 +1,4 @@
-import { ArrowRight } from "lucide-react";
-
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/data/site";
 
@@ -26,13 +25,13 @@ export function CtaBanner() {
               <Button className="bg-white text-[var(--accent)] shadow-none hover:bg-white/92 hover:text-[var(--accent-strong)]" size="lg" asChild>
                 <a href="#quote">
                   Get a Free Quote
-                  <ArrowRight />
+                  <FilledIcon name="arrow" />
                 </a>
               </Button>
               <Button className="border border-white/55 bg-transparent text-white shadow-none hover:bg-white/12" size="lg" asChild>
                 <a href={contactInfo.officeHref}>
                   Call {contactInfo.office}
-                  <ArrowRight />
+                  <FilledIcon name="arrow" />
                 </a>
               </Button>
             </div>

@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Leaf } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
 import { services } from "@/data/site";
 
@@ -19,7 +19,7 @@ export function ServicesSection() {
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
           <Badge>
-            <Leaf className="size-3.5 text-[var(--green)]" />
+            <FilledIcon name="leaf" className="size-3.5 text-[var(--green)]" />
             Our services
           </Badge>
           <h2 className="font-heading mt-5 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
@@ -38,7 +38,7 @@ export function ServicesSection() {
                 <Card className={`h-full rounded-2xl border-white/20 ${serviceCardStyle}`}>
                   <CardContent className="flex h-full flex-col items-center p-6 text-center">
                     <span className="grid size-14 place-items-center rounded-2xl bg-white/16 text-white ring-1 ring-white/20">
-                      <service.icon className="size-7" strokeWidth={1.8} />
+                      <FilledIcon name={service.icon} className="size-7" />
                     </span>
                     <h3 className="font-heading mt-6 text-[16px] font-bold leading-snug text-white md:text-[18px]">{service.title}</h3>
                     <p className="mt-3 text-sm font-medium leading-6 text-white/82">{service.text}</p>

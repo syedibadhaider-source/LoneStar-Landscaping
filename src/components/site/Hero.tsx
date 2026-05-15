@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Leaf } from "lucide-react";
 
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { heroFadeUp, heroParent } from "@/components/site/motion";
 import { heroSlides } from "@/data/site";
 
@@ -84,10 +84,10 @@ export function Hero() {
               className="inline-flex items-center gap-5 rounded-lg bg-[var(--green)] px-7 py-4 text-base font-extrabold text-white shadow-[0_18px_46px_rgba(61,113,35,0.32)] transition hover:-translate-y-0.5 hover:bg-[var(--green-strong)] hover:shadow-[0_24px_58px_rgba(61,113,35,0.38)] md:px-9 md:py-5 md:text-lg"
             >
               <span className="grid size-9 place-items-center rounded-md border border-white/26">
-                <Leaf className="size-5" />
+                <FilledIcon name="leaf" className="size-5" />
               </span>
               Get a Free Quote
-              <ArrowRight className="size-5" />
+              <FilledIcon name="arrow" className="size-5" />
             </a>
           </motion.div>
         </motion.div>

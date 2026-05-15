@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Leaf } from "lucide-react";
 
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
@@ -18,7 +18,7 @@ export function GalleryPreview() {
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div>
             <Badge>
-              <Leaf className="size-3.5 text-[var(--green)]" />
+              <FilledIcon name="leaf" className="size-3.5 text-[var(--green)]" />
               Gallery preview
             </Badge>
             <h2 className="font-heading mt-5 max-w-2xl text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
@@ -28,7 +28,7 @@ export function GalleryPreview() {
           <Button variant="outline" asChild>
             <a href="#gallery">
               View Full Gallery
-              <ArrowRight />
+              <FilledIcon name="arrow" />
             </a>
           </Button>
         </div>

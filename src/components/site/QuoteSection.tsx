@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { type FormEvent, type ReactNode, useState } from "react";
 import { motion } from "framer-motion";
-import { ClipboardCheck, Mail, MapPin, Phone, Sparkles, type LucideIcon } from "lucide-react";
 
+import { FilledIcon, type FilledIconName } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -62,7 +62,7 @@ export function QuoteSection() {
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="flex flex-col justify-between">
           <div>
             <Badge>
-              <ClipboardCheck className="size-3.5 text-[var(--green)]" />
+              <FilledIcon name="clipboard" className="size-3.5 text-[var(--green)]" />
               Request quote
             </Badge>
             <h2 className="font-heading mt-5 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
@@ -132,7 +132,7 @@ export function QuoteSection() {
               </div>
               <Button size="lg" type="submit">
                 Submit Quote Request
-                <Sparkles />
+                <FilledIcon name="spark" />
               </Button>
             </form>
           </CardContent>
@@ -150,10 +150,10 @@ export function QuoteSection() {
             <div className="p-6 pb-0">
               <h3 className="font-heading text-[22px] font-extrabold">Contact Information</h3>
               <div className="mt-7 grid gap-5">
-                <ContactItem icon={MapPin} label="Address">{contactInfo.address}</ContactItem>
-                <ContactItem icon={Phone} label="Office">{contactInfo.office}</ContactItem>
-                <ContactItem icon={Phone} label="Cell">{contactInfo.cell}</ContactItem>
-                <ContactItem icon={Mail} label="Email">{contactInfo.email}</ContactItem>
+                <ContactItem icon="map-pin" label="Address">{contactInfo.address}</ContactItem>
+                <ContactItem icon="phone" label="Office">{contactInfo.office}</ContactItem>
+                <ContactItem icon="phone" label="Cell">{contactInfo.cell}</ContactItem>
+                <ContactItem icon="mail" label="Email">{contactInfo.email}</ContactItem>
               </div>
             </div>
             <div className="relative mt-8 min-h-[420px] flex-1">
@@ -191,11 +191,11 @@ function FormField({
   );
 }
 
-function ContactItem({ icon: Icon, label, children }: { icon: LucideIcon; label: string; children: ReactNode }) {
+function ContactItem({ icon, label, children }: { icon: FilledIconName; label: string; children: ReactNode }) {
   return (
     <div className="flex gap-3">
       <span className="mt-1 grid size-9 shrink-0 place-items-center rounded-md bg-white/10 text-[var(--fresh-green)]">
-        <Icon className="size-4" />
+        <FilledIcon name={icon} className="size-4" />
       </span>
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/48">{label}</p>

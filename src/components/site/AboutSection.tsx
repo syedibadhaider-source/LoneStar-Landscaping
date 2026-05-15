@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Leaf } from "lucide-react";
 
+import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/components/site/motion";
@@ -14,7 +14,7 @@ export function AboutSection() {
       <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }}>
           <Badge>
-            <Leaf className="size-3.5 text-[var(--green)]" />
+            <FilledIcon name="leaf" className="size-3.5 text-[var(--green)]" />
             About BR Lonestar
           </Badge>
           <h2 className="font-heading mt-5 max-w-xl text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
@@ -31,7 +31,7 @@ export function AboutSection() {
           <Button className="mt-8" variant="outline" asChild>
             <a href="#quote">
               Learn More About Us
-              <ArrowRight />
+              <FilledIcon name="arrow" />
             </a>
           </Button>
         </motion.div>
