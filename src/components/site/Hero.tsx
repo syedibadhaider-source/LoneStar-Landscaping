@@ -56,18 +56,22 @@ export function Hero() {
           <motion.h1 variants={heroFadeUp} className="font-heading max-w-4xl text-[42px] font-extrabold leading-[1.03] text-white md:text-[64px] lg:text-[76px] xl:text-[86px]">
             Your Property.
             <br />
-            <span className="relative inline-block text-transparent">
-              Perfectly Maintained.
-              <motion.span
-                aria-hidden="true"
-                className="absolute inset-y-0 left-0 overflow-hidden whitespace-nowrap border-r-[0.08em] border-[var(--accent)] text-[var(--accent)]"
-                initial={shouldReduceMotion ? { width: "100%" } : { width: "0%" }}
-                animate={shouldReduceMotion ? { width: "100%" } : { width: ["0%", "100%"] }}
-                transition={{ duration: shouldReduceMotion ? 0 : 3.4, ease: "linear", repeat: Infinity, repeatDelay: 0 }}
-              >
-                Perfectly Maintained.
-              </motion.span>
-            </span>
+            <motion.span
+              className="block text-[var(--accent)]"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.75, delay: 0.3, ease: "easeOut" }}
+            >
+              Perfectly
+            </motion.span>
+            <motion.span
+              className="block text-[var(--accent)]"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.75, delay: 0.46, ease: "easeOut" }}
+            >
+              Maintained.
+            </motion.span>
           </motion.h1>
 
           <motion.p variants={heroFadeUp} className="mt-7 max-w-xl text-[17px] leading-8 text-white/82 md:text-[20px]">
