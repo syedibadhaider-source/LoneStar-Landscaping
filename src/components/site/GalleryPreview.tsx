@@ -13,7 +13,7 @@ export function GalleryPreview() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="gallery" className="bg-white py-24 md:py-32">
+    <section id="gallery" className="bg-white py-16 md:py-20">
       <div className="section-shell">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <div>
@@ -33,7 +33,7 @@ export function GalleryPreview() {
           </Button>
         </div>
 
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
+        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
           {galleryImages.map((image) => (
             <motion.div
               key={image.src}

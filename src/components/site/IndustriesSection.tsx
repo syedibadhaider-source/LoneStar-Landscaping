@@ -12,7 +12,7 @@ export function IndustriesSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="industries" className="bg-[var(--background)] py-24 md:py-32">
+    <section id="industries" className="bg-[var(--background)] py-16 md:py-20">
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
           <Badge>
@@ -24,7 +24,7 @@ export function IndustriesSection() {
           </h2>
         </div>
 
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
+        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
           {industries.map((industry) => (
             <motion.div
               key={industry.title}

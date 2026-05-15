@@ -57,7 +57,7 @@ export function QuoteSection() {
   }
 
   return (
-    <section id="quote" className="bg-[var(--background)] py-24 md:py-32">
+    <section id="quote" className="bg-[var(--background)] py-16 md:py-20">
       <div className="section-shell grid gap-8 md:grid-cols-2 xl:grid-cols-[0.85fr_1.2fr_0.95fr]">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="flex flex-col justify-between">
           <div>
@@ -73,7 +73,7 @@ export function QuoteSection() {
               solution.
             </p>
           </div>
-          <div className="mt-10 hidden overflow-hidden rounded-2xl xl:block">
+          <div className="mt-8 hidden overflow-hidden rounded-2xl xl:block">
             <Image
               src="/images/gallery-1.jpg"
               alt="Decorative landscaping detail with flowers and maintained plantings"

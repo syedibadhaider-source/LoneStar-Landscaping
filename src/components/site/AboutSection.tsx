@@ -10,8 +10,8 @@ import { fadeUp } from "@/components/site/motion";
 
 export function AboutSection() {
   return (
-    <section id="about" className="bg-[var(--background)] py-24 md:py-32">
-      <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
+    <section id="about" className="bg-[var(--background)] py-16 md:py-20">
+      <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }}>
           <Badge>
             <Leaf className="size-3.5 text-[var(--green)]" />

@@ -26,7 +26,7 @@ export function WhyChooseSection() {
   const transition = { duration: shouldReduceMotion ? 0 : 0.55, ease: "easeOut" as const };
 
   return (
-    <section id="quality" className="bg-white py-24 md:py-32">
+    <section id="quality" className="bg-white py-16 md:py-20">
       <div className="section-shell">
         <motion.div
           variants={fadeUp}
@@ -45,7 +45,7 @@ export function WhyChooseSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-120px" }}
-            className="relative mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-6 xl:gap-0"
+            className="relative mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-6 xl:gap-0"
           >
             <div className="pointer-events-none absolute left-5 right-5 top-8 hidden h-px bg-white/12 xl:block">
               <motion.div
