@@ -11,7 +11,7 @@ import { services } from "@/data/site";
 const serviceCardStyles = [
   "bg-[var(--green)] shadow-[0_24px_70px_rgba(109,165,68,0.22)] hover:shadow-[0_30px_90px_rgba(109,165,68,0.32)]",
   "bg-[var(--soft-navy)] shadow-[0_24px_70px_rgba(11,39,66,0.22)] hover:shadow-[0_30px_90px_rgba(11,39,66,0.32)]",
-  "bg-[var(--orange)] shadow-[0_24px_70px_rgba(242,90,29,0.22)] hover:shadow-[0_30px_90px_rgba(242,90,29,0.32)]",
+  "bg-[var(--accent)] shadow-[0_24px_70px_rgba(242,90,29,0.22)] hover:shadow-[0_30px_90px_rgba(242,90,29,0.32)]",
 ];
 
 export function ServicesSection() {

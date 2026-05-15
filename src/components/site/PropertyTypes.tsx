@@ -4,7 +4,7 @@ export function PropertyTypes() {
   return (
     <section className="relative z-20 -mt-10">
       <div className="section-shell">
-        <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/20 bg-[var(--orange)] p-4 shadow-xl shadow-[rgba(242,90,29,0.22)] lg:grid-cols-4 lg:p-5">
+        <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-white/20 bg-[var(--accent)] p-4 shadow-xl shadow-[rgba(242,90,29,0.22)] lg:grid-cols-4 lg:p-5">
           {propertyTypes.map((type) => (
             <div
               key={type.label}
