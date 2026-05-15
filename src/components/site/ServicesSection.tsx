@@ -9,7 +9,7 @@ import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/comp
 import { services } from "@/data/site";
 
 const serviceCardStyle =
-  "bg-[var(--accent)] shadow-[0_24px_70px_rgba(242,91,30,0.22)] hover:shadow-[0_30px_90px_rgba(242,91,30,0.32)]";
+  "bg-[var(--pine)] shadow-[0_24px_70px_rgba(22,33,66,0.2)] hover:shadow-[0_30px_90px_rgba(22,33,66,0.3)]";
 
 export function ServicesSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -37,7 +37,7 @@ export function ServicesSection() {
               <motion.div whileHover={shouldReduceMotion ? undefined : cardHover} transition={cardHoverTransition} className="h-full">
                 <Card className={`h-full rounded-2xl border-white/20 ${serviceCardStyle}`}>
                   <CardContent className="flex h-full flex-col items-center p-6 text-center">
-                    <span className="grid size-14 place-items-center rounded-2xl bg-white/16 text-white ring-1 ring-white/20">
+                    <span className="grid size-14 place-items-center rounded-2xl bg-white text-[var(--accent)] ring-1 ring-white/20">
                       <FilledIcon name={service.icon} className="size-7" />
                     </span>
                     <h3 className="font-heading mt-6 text-[16px] font-bold leading-snug text-white md:text-[18px]">{service.title}</h3>
