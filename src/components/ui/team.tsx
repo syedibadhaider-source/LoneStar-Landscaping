@@ -14,7 +14,7 @@ export function TeamSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="team" className="relative overflow-hidden bg-[var(--background)] py-16 md:py-20">
+    <section id="team" className="relative overflow-hidden bg-[var(--background)] py-14 md:py-16">
       <Image
         src="/images/lonestar-icon.svg"
         alt=""
@@ -31,16 +31,16 @@ export function TeamSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-10 max-w-3xl text-center"
+          className="mx-auto mb-8 max-w-3xl text-center"
         >
           <Badge>
             <FilledIcon name="users" className="size-3.5 text-[var(--green)]" />
             Leadership team
           </Badge>
-          <h2 className="font-heading mt-5 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
+          <h2 className="font-heading mt-4 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[38px]">
             Meet the team behind BR Lonestar
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted-foreground)] md:text-[17px]">
+          <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-[var(--muted-foreground)] md:text-[16px]">
             Experienced leadership with direct access for property managers, board members, and
             commercial clients across North Texas.
           </p>
@@ -58,34 +58,34 @@ export function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
-                className="group w-[300px] shrink-0 overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-[0_22px_70px_rgba(22,33,66,0.09)] transition hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(22,33,66,0.14)] sm:w-[340px]"
+                className="group w-[280px] shrink-0 overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-[0_18px_58px_rgba(22,33,66,0.08)] transition hover:-translate-y-1 hover:shadow-[0_26px_74px_rgba(22,33,66,0.13)] sm:w-[305px]"
               >
-                <div className="relative h-80 overflow-hidden bg-[var(--muted)]">
+                <div className="relative h-56 overflow-hidden bg-[var(--muted)]">
                   <Image
                     src={member.image}
                     alt={`${member.name}, ${member.role} at BR Lonestar`}
                     fill
-                    className="object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
-                    sizes="(max-width: 640px) 300px, 340px"
+                    className="object-cover saturate-[0.82] transition duration-500 group-hover:scale-105 group-hover:saturate-100"
+                    sizes="(max-width: 640px) 280px, 305px"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,33,66,0)_45%,rgba(22,33,66,0.72)_100%)]" />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-white/92 p-4 shadow-[0_18px_46px_rgba(22,33,66,0.18)] backdrop-blur">
-                    <h3 className="font-heading text-xl font-extrabold leading-tight text-[var(--pine)]">
+                  <div className="absolute bottom-3 left-3 right-3 rounded-xl bg-white/94 p-3 shadow-[0_14px_34px_rgba(22,33,66,0.16)] backdrop-blur">
+                    <h3 className="font-heading text-lg font-extrabold leading-tight text-[var(--pine)]">
                       {member.name}
                     </h3>
-                    <p className="mt-1 text-sm font-bold text-[var(--accent)]">{member.role}</p>
+                    <p className="mt-1 text-xs font-bold leading-5 text-[var(--accent)]">{member.role}</p>
                   </div>
                 </div>
 
-                <div className="grid gap-3 p-5">
+                <div className="grid gap-1.5 p-4">
                   <TeamContact icon="phone" label="Mobile" value={member.mobile} href={`tel:+1${member.mobile.replace(/\D/g, "")}`} />
                   {member.office ? (
                     <TeamContact icon="phone" label="Office" value={member.office} href={`tel:+1${member.office.replace(/\D/g, "")}`} />
                   ) : null}
                   <TeamContact icon="mail" label="Email" value={member.email} href={`mailto:${member.email}`} />
-                  <TeamContact icon="map-pin" label="Address" value={member.address} />
+                  <TeamContact icon="map-pin" label="Address" value={compactAddress(member.address)} />
 
-                  <Button className="mt-2 w-full" asChild>
+                  <Button className="mt-2 h-10 w-full text-xs" asChild>
                     <a href={`mailto:${member.email}`}>
                       Contact {member.name.split(" ")[0]}
                       <FilledIcon name="arrow" />
@@ -114,14 +114,15 @@ function TeamContact({
 }) {
   const content = (
     <>
-      <span className="grid size-8 shrink-0 place-items-center rounded-md bg-[rgba(242,91,30,0.1)] text-[var(--accent)]">
-        <FilledIcon name={icon} className="size-4" />
+      <span className="relative grid size-7 shrink-0 place-items-center rounded-full bg-[var(--pine)] text-white shadow-[0_8px_18px_rgba(22,33,66,0.16)]">
+        <FilledIcon name={icon} className="size-3.5" />
+        <span className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border border-white bg-[var(--accent)]" />
       </span>
       <span className="min-w-0">
-        <span className="block text-[10px] font-extrabold uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
+        <span className="block text-[9px] font-extrabold uppercase tracking-[0.14em] text-[var(--muted-foreground)]">
           {label}
         </span>
-        <span className="mt-0.5 block text-sm font-semibold leading-5 text-[var(--pine)]">
+        <span className="mt-0.5 block text-[13px] font-semibold leading-5 text-[var(--pine)]">
           {value}
         </span>
       </span>
@@ -130,11 +131,15 @@ function TeamContact({
 
   if (href) {
     return (
-      <a className="flex items-start gap-3 rounded-lg p-2 transition hover:bg-[var(--off-white)]" href={href}>
+      <a className="flex items-start gap-2.5 rounded-lg p-1.5 transition hover:bg-[var(--off-white)]" href={href}>
         {content}
       </a>
     );
   }
 
-  return <div className="flex items-start gap-3 rounded-lg p-2">{content}</div>;
+  return <div className="flex items-start gap-2.5 rounded-lg p-1.5">{content}</div>;
+}
+
+function compactAddress(address: string) {
+  return address.replace("State Highway", "State Hwy").replace("Suite", "Ste.");
 }
