@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Leaf } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { heroFadeUp, heroParent } from "@/components/site/motion";
 import { heroSlides } from "@/data/site";
 
@@ -51,21 +50,30 @@ export function Hero() {
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,33,66,0.98)_0%,rgba(22,33,66,0.86)_38%,rgba(22,33,66,0.24)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_32%,rgba(61,113,35,0.18),transparent_28%),radial-gradient(circle_at_72%_18%,rgba(242,91,30,0.1),transparent_22%)]" />
-      <div className="absolute inset-0 star-field opacity-45" />
 
       <div className="section-shell relative z-10 flex min-h-0 items-center lg:min-h-[720px]">
         <motion.div variants={heroParent} initial="hidden" animate="visible" className="w-full max-w-4xl text-left lg:w-[58%]">
-          <motion.div variants={heroFadeUp}>
-            <Badge className="border-white/18 bg-white/8 px-5 py-2 text-[11px] tracking-[0.24em] text-white/82 backdrop-blur">
-              <Leaf className="size-3.5 text-[var(--green)]" />
-              Professional landscaping & property maintenance
-            </Badge>
-          </motion.div>
-
-          <motion.h1 variants={heroFadeUp} className="font-heading mt-8 max-w-4xl text-[42px] font-extrabold leading-[1.03] text-white md:text-[64px] lg:text-[76px] xl:text-[86px]">
+          <motion.h1 variants={heroFadeUp} className="font-heading max-w-4xl text-[42px] font-extrabold leading-[1.03] text-white md:text-[64px] lg:text-[76px] xl:text-[86px]">
             Your Property.
             <br />
-            <span className="text-[var(--fresh-green)]">Perfectly Maintained.</span>
+            <motion.span
+              className="inline-block text-[var(--accent)]"
+              animate={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      opacity: [0.92, 1, 0.92],
+                      textShadow: [
+                        "0 0 0 rgba(242,91,30,0)",
+                        "0 0 26px rgba(242,91,30,0.32)",
+                        "0 0 0 rgba(242,91,30,0)",
+                      ],
+                    }
+              }
+              transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity }}
+            >
+              Perfectly Maintained.
+            </motion.span>
           </motion.h1>
 
           <motion.p variants={heroFadeUp} className="mt-7 max-w-xl text-[17px] leading-8 text-white/82 md:text-[20px]">
