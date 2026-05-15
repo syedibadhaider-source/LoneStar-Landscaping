@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "BR Lonestar Landscaping & Property Maintenance",
   description:
     "Premium commercial landscaping, HOA grounds care, and property maintenance for Texas communities and commercial properties.",
+  icons: {
+    icon: [{ url: "/images/favicon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/images/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/images/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
