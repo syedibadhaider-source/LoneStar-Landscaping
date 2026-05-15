@@ -98,11 +98,8 @@ export function WhyChooseSection() {
                     <Check className="size-5" />
                   </motion.span>
                 </motion.span>
-                <div>
-                  <p className="font-heading text-xs font-extrabold uppercase tracking-[0.16em] text-white/38">
-                    Step {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="font-heading mt-3 text-[17px] font-bold leading-snug text-white">{item.title}</h3>
+                <div className="pt-1 xl:pt-7">
+                  <h3 className="font-heading text-[17px] font-bold leading-snug text-white">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
                 </div>
               </motion.div>
