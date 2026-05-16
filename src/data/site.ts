@@ -175,16 +175,6 @@ export const teamMembers: TeamMember[] = [
     email: "rodney@brlonestar.com",
     address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
   },
-  {
-    name: "Rose McCarty",
-    role: "Vice President, Sales & Marketing",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
-    imagePosition: "center 14%",
-    mobile: "713-252-3326",
-    email: "rose@brlonestar.com",
-    address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
-  },
 ];
 
 export const industries = [

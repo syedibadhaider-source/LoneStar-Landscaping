@@ -108,47 +108,6 @@ select {
   clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
 }
 
-.marquee-root {
-  --gap: 1.5rem;
-  --duration: 34s;
-  display: flex;
-  gap: var(--gap);
-  overflow: hidden;
-  user-select: none;
-}
-
-.marquee-track {
-  display: flex;
-  min-width: max-content;
-  flex-shrink: 0;
-  gap: var(--gap);
-  animation: marquee var(--duration) linear infinite;
-}
-
-.marquee-pause:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-root {
-    overflow-x: auto;
-  }
-
-  .marquee-track {
-    animation: none;
-  }
-}
-
 @media (max-width: 640px) {
   .section-shell {
     width: min(100% - 28px, 1280px);
