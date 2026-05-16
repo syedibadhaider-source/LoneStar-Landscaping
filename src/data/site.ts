@@ -168,9 +168,8 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Rodney Riepenhoff",
     role: "Vice President",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85",
-    imagePosition: "center 16%",
+    image: "/images/rodney-riepenhoff.jpg",
+    imagePosition: "center 34%",
     mobile: "903-456-4060",
     email: "rodney@brlonestar.com",
     address: "7300 State Highway 121, Suite 300, McKinney, TX 75070",
