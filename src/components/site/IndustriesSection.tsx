@@ -35,7 +35,7 @@ export function IndustriesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
-          className="mt-12 grid gap-6 md:grid-cols-2"
+          className="section-stack grid gap-6 md:grid-cols-2"
         >
           {projects.map((project) => (
             <motion.article

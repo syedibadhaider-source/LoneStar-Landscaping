@@ -85,11 +85,23 @@ select {
 }
 
 .section-pad {
-  padding-block: clamp(4.5rem, 8vw, 7rem);
+  padding-block: clamp(3.5rem, 6vw, 5.25rem);
 }
 
 .section-pad-sm {
-  padding-block: clamp(3.5rem, 6vw, 5rem);
+  padding-block: clamp(2.75rem, 5vw, 4.25rem);
+}
+
+.section-pad-top {
+  padding-top: clamp(3.5rem, 6vw, 5.25rem);
+}
+
+.section-pad-bottom {
+  padding-bottom: clamp(3.5rem, 6vw, 5.25rem);
+}
+
+.section-stack {
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .eyebrow-dot::before {

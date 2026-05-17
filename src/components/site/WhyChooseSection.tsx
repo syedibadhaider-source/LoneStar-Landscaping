@@ -53,7 +53,7 @@ export function WhyChooseSection() {
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
-          className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.25fr_0.9fr] lg:items-center"
+          className="section-stack grid gap-6 lg:grid-cols-[0.9fr_1.25fr_0.9fr] lg:items-center"
         >
           <div className="grid gap-6">
             {trustItems.slice(0, 2).map((item) => (

@@ -35,7 +35,7 @@ export function InsightsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
-          className="mt-12 grid gap-6 md:grid-cols-3"
+          className="section-stack grid gap-6 md:grid-cols-3"
         >
           {insights.map((post) => (
             <motion.article

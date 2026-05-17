@@ -15,7 +15,7 @@ export function Footer() {
   return (
     <footer className="bg-[var(--pine)] text-white">
       <div className="border-b border-white/10">
-        <div className="section-shell flex flex-col gap-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="section-shell flex flex-col gap-5 py-7 lg:flex-row lg:items-center lg:justify-between">
           <p className="font-heading text-lg font-bold">Subscribe newsletter for outdoor updates</p>
           <form className="flex w-full max-w-md overflow-hidden rounded-full border border-white/16 bg-white/8 p-1">
             <label className="sr-only" htmlFor="newsletter-email">
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="section-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+      <div className="section-shell grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
         <div className="relative overflow-hidden">
           <a href="#home" className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
             <Image

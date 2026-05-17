@@ -10,7 +10,7 @@ import { contactInfo } from "@/data/site";
 
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-[var(--pine)] py-24 text-white md:py-32">
+    <section className="section-pad relative overflow-hidden bg-[var(--pine)] text-white">
       <Image
         src="/images/hero-gated-community.jpg"
         alt="Premium landscaped community entrance at dusk"

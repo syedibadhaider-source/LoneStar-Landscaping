@@ -13,7 +13,7 @@ export function TeamSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="team" className="relative overflow-hidden bg-white py-16 md:py-20">
+    <section id="team" className="section-pad relative overflow-hidden bg-white">
       <Image
         src="/images/lonestar-icon.svg"
         alt=""

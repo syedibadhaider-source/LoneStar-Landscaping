@@ -35,7 +35,7 @@ export function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
-          className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="section-stack grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service) => (
             <motion.article

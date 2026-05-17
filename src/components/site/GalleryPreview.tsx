@@ -34,7 +34,7 @@ export function GalleryPreview() {
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
-          className="mt-12 grid gap-6 md:grid-cols-3"
+          className="section-stack grid gap-6 md:grid-cols-3"
         >
           {testimonials.map((review) => (
             <motion.article
