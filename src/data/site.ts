@@ -131,18 +131,49 @@ export const testimonials = [
     type: "HOA Property",
     quote:
       "BR Lonestar keeps our entrances and common areas clean, sharp, and consistent. Communication is easy and the work always looks professional.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80",
   },
   {
     name: "Commercial Property Manager",
     type: "Office Property",
     quote:
       "Their team understands managed properties. They are responsive, reliable, and keep the site looking ready for tenants and visitors.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80",
   },
   {
     name: "Retail Center Owner",
     type: "Shopping Center",
     quote:
       "The property looks more polished and welcoming. Seasonal maintenance and quick follow-up have made a clear difference.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+  },
+  {
+    name: "Estate Manager",
+    type: "Gated Community",
+    quote:
+      "The level of detail BR Lonestar brings to our neighborhood is unmatched. The lawns and seasonal plantings always look spectacular.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80",
+  },
+  {
+    name: "Facilities Director",
+    type: "Corporate Campus",
+    quote:
+      "Reliability is key for us, and they deliver every time. From lawn care to tree maintenance, everything is handled perfectly.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+  },
+  {
+    name: "Condo Association President",
+    type: "Luxury High Rise",
+    quote:
+      "Our outdoor amenity spaces have never looked better. They proactively suggest improvements and execute flawlessly.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+  },
+  {
+    name: "Business Park Owner",
+    type: "Commercial Real Estate",
+    quote:
+      "Great communication and excellent results. They transformed our aging landscape into a modern, welcoming environment.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80",
   },
 ];
 
