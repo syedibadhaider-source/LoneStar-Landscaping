@@ -13,10 +13,30 @@ const socialLinks: { icon: FilledIconName; label: string; href: string }[] = [
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--deep-navy)] text-white">
+    <footer className="bg-[var(--pine)] text-white">
+      <div className="border-b border-white/10">
+        <div className="section-shell flex flex-col gap-5 py-8 lg:flex-row lg:items-center lg:justify-between">
+          <p className="font-heading text-lg font-bold">Subscribe newsletter for outdoor updates</p>
+          <form className="flex w-full max-w-md overflow-hidden rounded-full border border-white/16 bg-white/8 p-1">
+            <label className="sr-only" htmlFor="newsletter-email">
+              Email address
+            </label>
+            <input
+              id="newsletter-email"
+              type="email"
+              placeholder="Add email"
+              className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white outline-none placeholder:text-white/48"
+            />
+            <button type="submit" aria-label="Subscribe" className="grid size-10 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-white transition hover:bg-[var(--accent-strong)]">
+              <FilledIcon name="arrow" className="size-4" />
+            </button>
+          </form>
+        </div>
+      </div>
+
       <div className="section-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div className="relative overflow-hidden">
-          <a href="#home" className="inline-flex rounded-lg border border-white/14 bg-white px-4 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
+          <a href="#home" className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
             <Image
               src="/images/lonestar-logo-full.svg"
               alt="BR Lonestar Landscaping & Property Maintenance logo"
@@ -25,7 +45,7 @@ export function Footer() {
               className="h-14 w-auto max-w-[220px] object-contain"
             />
           </a>
-          <p className="mt-5 max-w-sm text-sm leading-7 text-white/62">
+          <p className="mt-5 max-w-sm text-sm leading-7 text-white/68">
             Professional landscaping and property maintenance for HOAs, commercial properties, and
             managed communities across North Texas.
           </p>
@@ -43,7 +63,7 @@ export function Footer() {
                 key={item.label}
                 href={item.href}
                 aria-label={item.label}
-                className="grid size-10 place-items-center rounded-md border border-white/12 bg-white/7 text-white/72 transition hover:-translate-y-0.5 hover:border-[var(--green)] hover:text-white"
+                className="grid size-10 place-items-center rounded-full border border-white/12 bg-white/7 text-white/72 transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-white"
               >
                 <FilledIcon name={item.icon} className="size-4" />
               </a>
@@ -51,7 +71,7 @@ export function Footer() {
           </div>
         </div>
 
-        <FooterColumn title="Navigation">
+        <FooterColumn title="Quick Link">
           {navItems.map((item) => (
             <FooterLink key={item.label} href={item.href}>{item.label}</FooterLink>
           ))}
@@ -63,7 +83,7 @@ export function Footer() {
           ))}
         </FooterColumn>
 
-        <FooterColumn title="Contact Us">
+        <FooterColumn title="Contact">
           <FooterText>{contactInfo.address}</FooterText>
           <FooterText>Office: {contactInfo.office}</FooterText>
           <FooterText>Cell: {contactInfo.cell}</FooterText>
@@ -72,11 +92,11 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="section-shell flex flex-col gap-4 py-6 text-sm text-white/54 md:flex-row md:items-center md:justify-between">
+        <div className="section-shell flex flex-col gap-4 py-6 text-sm text-white/56 md:flex-row md:items-center md:justify-between">
           <p>© 2025 BR Lonestar Landscaping & Property Maintenance. All rights reserved.</p>
           <div className="flex gap-5">
             <a className="transition hover:text-white" href="#">Privacy Policy</a>
-            <a className="transition hover:text-white" href="#">Terms of Service</a>
+            <a className="transition hover:text-white" href="#">Terms & Conditions</a>
           </div>
         </div>
       </div>
@@ -95,12 +115,12 @@ function FooterColumn({ title, children }: { title: string; children: ReactNode 
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a className="text-sm leading-6 text-white/62 transition hover:text-white" href={href}>
+    <a className="text-sm leading-6 text-white/66 transition hover:text-white" href={href}>
       {children}
     </a>
   );
 }
 
 function FooterText({ children }: { children: ReactNode }) {
-  return <p className="text-sm leading-6 text-white/62">{children}</p>;
+  return <p className="text-sm leading-6 text-white/66">{children}</p>;
 }

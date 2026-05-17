@@ -6,61 +6,70 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
-import { industries } from "@/data/site";
+import { projects } from "@/data/site";
 
 export function IndustriesSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="industries" className="bg-[var(--background)] py-16 md:py-20">
+    <section id="projects" className="section-pad bg-white">
       <div className="section-shell">
-        <div className="mx-auto max-w-3xl text-center">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mx-auto max-w-3xl text-center"
+        >
           <Badge>
-            <FilledIcon name="leaf" className="size-3.5 text-[var(--green)]" />
-            Industries we serve
+            <FilledIcon name="spark" className="size-3.5 text-[var(--green)]" />
+            Projects
           </Badge>
-          <h2 className="font-heading mt-5 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
-            Landscaping solutions for managed properties
+          <h2 className="font-heading mt-5 text-[30px] font-extrabold leading-tight tracking-[-0.04em] text-[var(--pine)] sm:text-[38px] lg:text-[48px]">
+            Completed projects for managed properties
           </h2>
-        </div>
+        </motion.div>
 
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} className="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
-          {industries.map((industry) => (
-            <motion.div
-              key={industry.title}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="mt-12 grid gap-6 md:grid-cols-2"
+        >
+          {projects.map((project) => (
+            <motion.article
+              key={project.title}
               variants={fadeUp}
-              transition={{ duration: shouldReduceMotion ? 0 : 0.52, ease: "easeOut" }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
             >
-              <motion.div
+              <motion.a
+                href="#quote"
                 whileHover={shouldReduceMotion ? undefined : cardHover}
                 transition={cardHoverTransition}
-                className="group flex h-full flex-col rounded-[28px] border border-[rgba(228,232,223,0.9)] bg-[#F4FAE8] p-4 shadow-[0_22px_70px_rgba(22,33,66,0.08)] transition hover:shadow-[0_30px_90px_rgba(22,33,66,0.14)] sm:p-5 xl:p-3"
+                className="group block overflow-hidden rounded-3xl border border-[var(--border)] bg-white p-4 shadow-sm transition hover:shadow-[0_26px_80px_rgba(11,46,74,0.12)]"
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-white xl:rounded-[20px]">
-                  <motion.div className="absolute inset-0" whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }} transition={{ duration: 0.6, ease: "easeOut" }}>
-                    <Image
-                      src={industry.image}
-                      alt={`${industry.title} landscaping`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 20vw"
-                    />
-                  </motion.div>
+                <div className="relative h-72 overflow-hidden rounded-2xl bg-[var(--muted)] md:h-80">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
-                <div className="flex flex-1 flex-col px-0 pt-6 xl:pt-4">
-                  <h3 className="font-heading min-h-[68px] text-[26px] font-extrabold leading-tight text-black sm:text-[28px] xl:min-h-[54px] xl:text-[19px]">
-                    {industry.title}
-                  </h3>
-                  <a
-                    href="#quote"
-                    className="mt-auto inline-flex w-fit shrink-0 items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--accent-strong)] sm:text-base xl:px-4 xl:py-2.5 xl:text-sm"
-                  >
-                    Learn More
+                <div className="flex items-start justify-between gap-4 px-1 pt-5">
+                  <div>
+                    <h3 className="font-heading text-xl font-bold tracking-[-0.03em] text-[var(--pine)]">{project.title}</h3>
+                    <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted-foreground)]">{project.text}</p>
+                  </div>
+                  <span className="mt-1 grid size-9 shrink-0 place-items-center rounded-full bg-[var(--green)] text-white transition group-hover:bg-[var(--accent)]">
                     <FilledIcon name="arrow" className="size-4" />
-                  </a>
+                  </span>
                 </div>
-              </motion.div>
-            </motion.div>
+              </motion.a>
+            </motion.article>
           ))}
         </motion.div>
       </div>

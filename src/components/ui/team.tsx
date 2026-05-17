@@ -13,7 +13,7 @@ export function TeamSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="team" className="relative overflow-hidden bg-[var(--background)] py-14 md:py-16">
+    <section id="team" className="relative overflow-hidden bg-white py-16 md:py-20">
       <Image
         src="/images/lonestar-icon.svg"
         alt=""
@@ -30,13 +30,13 @@ export function TeamSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-8 max-w-3xl text-center"
+          className="mx-auto mb-10 max-w-3xl text-center"
         >
           <Badge>
             <FilledIcon name="users" className="size-3.5 text-[var(--green)]" />
             Leadership team
           </Badge>
-          <h2 className="font-heading mt-4 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[38px]">
+          <h2 className="font-heading mt-4 text-[30px] font-extrabold leading-tight tracking-[-0.04em] text-[var(--pine)] sm:text-[38px] lg:text-[46px]">
             Meet the team behind BR Lonestar
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-[var(--muted-foreground)] md:text-[16px]">
@@ -53,14 +53,14 @@ export function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
-              className="group flex min-h-[340px] flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-[0_18px_58px_rgba(22,33,66,0.08)] transition hover:-translate-y-1 hover:shadow-[0_26px_74px_rgba(22,33,66,0.13)] md:flex-row"
+              className="group flex min-h-[340px] flex-col overflow-hidden rounded-3xl border border-[var(--border)] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-[0_26px_74px_rgba(11,46,74,0.13)] md:flex-row"
             >
               <div className="relative min-h-64 overflow-hidden bg-[var(--muted)] md:min-h-full md:w-[42%]">
                 <Image
                   src={member.image}
                   alt={`${member.name}, ${member.role} at BR Lonestar`}
                   fill
-                  className="object-cover saturate-[0.88] transition duration-500 group-hover:scale-105 group-hover:saturate-100"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                   style={{ objectPosition: member.imagePosition ?? "center 18%" }}
                   sizes="(max-width: 768px) 100vw, 280px"
                 />

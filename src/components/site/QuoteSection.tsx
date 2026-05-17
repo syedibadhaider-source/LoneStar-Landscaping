@@ -57,7 +57,7 @@ export function QuoteSection() {
   }
 
   return (
-    <section id="quote" className="bg-[var(--background)] py-16 md:py-20">
+    <section id="quote" className="section-pad bg-[var(--cream-bg)]">
       <div className="section-shell grid gap-8 md:grid-cols-2 xl:grid-cols-[0.85fr_1.2fr_0.95fr]">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="flex flex-col justify-between">
           <div>
@@ -65,7 +65,7 @@ export function QuoteSection() {
               <FilledIcon name="clipboard" className="size-3.5 text-[var(--green)]" />
               Request quote
             </Badge>
-            <h2 className="font-heading mt-5 text-[26px] font-extrabold leading-tight text-[var(--pine)] sm:text-[30px] lg:text-[44px]">
+            <h2 className="font-heading mt-5 text-[30px] font-extrabold leading-tight tracking-[-0.04em] text-[var(--pine)] sm:text-[38px] lg:text-[48px]">
               Request a free landscaping quote
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-[var(--muted-foreground)] md:text-[17px]">
@@ -84,7 +84,7 @@ export function QuoteSection() {
           </div>
         </motion.div>
 
-        <Card className="premium-card cursor-default">
+        <Card className="premium-card cursor-default rounded-3xl border-[var(--border)] shadow-sm">
           <CardContent className="p-6 md:p-8">
             <form className="grid gap-4" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -122,10 +122,10 @@ export function QuoteSection() {
               </FormField>
               <div aria-live="polite">
                 {formError ? (
-                  <p className="rounded-md border border-[rgba(242,91,30,0.24)] bg-[rgba(242,91,30,0.08)] px-3 py-2 text-sm font-semibold text-[var(--accent-strong)]">{formError}</p>
+                  <p className="rounded-2xl border border-[rgba(244,122,31,0.24)] bg-[rgba(244,122,31,0.08)] px-3 py-2 text-sm font-semibold text-[var(--accent-strong)]">{formError}</p>
                 ) : null}
                 {isSubmitted ? (
-                  <p className="rounded-md border border-[rgba(61,113,35,0.28)] bg-[rgba(61,113,35,0.1)] px-3 py-2 text-sm font-semibold text-[var(--green-strong)]">
+                  <p className="rounded-2xl border border-[rgba(47,107,69,0.28)] bg-[rgba(47,107,69,0.1)] px-3 py-2 text-sm font-semibold text-[var(--green-strong)]">
                     Thank you! Your quote request has been received.
                   </p>
                 ) : null}
@@ -144,7 +144,7 @@ export function QuoteSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="flex overflow-hidden rounded-2xl bg-[var(--pine)] text-white shadow-[0_24px_80px_rgba(22,33,66,0.18)]"
+          className="flex overflow-hidden rounded-3xl bg-[var(--pine)] text-white shadow-[0_24px_80px_rgba(11,46,74,0.18)]"
         >
           <div className="flex min-h-full w-full flex-col">
             <div className="p-6 pb-0">

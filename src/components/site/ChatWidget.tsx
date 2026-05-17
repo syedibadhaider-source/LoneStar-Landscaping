@@ -32,7 +32,7 @@ export function ChatWidget() {
                 href={contactInfo.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between gap-4 rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(242,91,30,0.28)]"
+                className="flex items-center justify-between gap-4 rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(244,122,31,0.28)]"
               >
                 <span className="flex items-center gap-3">
                   <FilledIcon name="chat" className="size-5" />
@@ -61,7 +61,7 @@ export function ChatWidget() {
         aria-label={isOpen ? "Close chat options" : "Open chat options"}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((open) => !open)}
-        className="relative grid size-16 place-items-center rounded-full bg-[var(--accent)] text-white shadow-[0_18px_52px_rgba(242,91,30,0.38)] transition hover:bg-[var(--accent-strong)] focus:outline-none focus:ring-4 focus:ring-[rgba(242,91,30,0.24)]"
+        className="relative grid size-16 place-items-center rounded-full bg-[var(--accent)] text-white shadow-[0_18px_52px_rgba(244,122,31,0.38)] transition hover:bg-[var(--accent-strong)] focus:outline-none focus:ring-4 focus:ring-[rgba(244,122,31,0.24)]"
         animate={
           shouldReduceMotion || isOpen
             ? { scale: 1, rotate: 0 }

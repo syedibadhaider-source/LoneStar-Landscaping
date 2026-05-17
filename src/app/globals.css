@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #162142;
-  --color-brand-deepNavy: #162142;
-  --color-brand-softNavy: #162142;
-  --color-brand-green: #3d7123;
-  --color-brand-darkGreen: #3d7123;
-  --color-brand-freshGreen: #3d7123;
-  --color-brand-orange: #f25b1e;
-  --color-brand-orangeHover: #f25b1e;
+  --color-brand-navy: #0b2e4a;
+  --color-brand-deepNavy: #071f33;
+  --color-brand-softNavy: #123c5e;
+  --color-brand-green: #2f6b45;
+  --color-brand-darkGreen: #245739;
+  --color-brand-freshGreen: #6fa84f;
+  --color-brand-orange: #f47a1f;
+  --color-brand-orangeHover: #dc6412;
   --color-brand-gold: #d7b35a;
   --color-brand-white: #ffffff;
   --color-brand-offWhite: #f7f9f5;
@@ -18,23 +18,24 @@
 }
 
 :root {
-  --primary-navy: #162142;
-  --deep-navy: #162142;
-  --soft-navy: #162142;
-  --landscape-green: #3d7123;
-  --dark-green: #3d7123;
-  --fresh-green: #3d7123;
-  --cta-orange: #f25b1e;
-  --cta-orange-hover: #f25b1e;
+  --primary-navy: #0b2e4a;
+  --deep-navy: #071f33;
+  --soft-navy: #123c5e;
+  --landscape-green: #2f6b45;
+  --dark-green: #245739;
+  --fresh-green: #6fa84f;
+  --cta-orange: #f47a1f;
+  --cta-orange-hover: #dc6412;
   --gold-accent: #d7b35a;
   --white: #ffffff;
-  --off-white: #f7f9f5;
-  --light-border: #e4e8df;
-  --muted-text: #5f6b5f;
-  --dark-text: #0b1b2b;
+  --off-white: #eef5ef;
+  --cream-bg: #f7f3ea;
+  --light-border: #dce8de;
+  --muted-text: #5e6e63;
+  --dark-text: #10231a;
   --background: var(--off-white);
   --foreground: var(--dark-text);
-  --muted: #eef4e9;
+  --muted: #eef5ef;
   --muted-foreground: var(--muted-text);
   --border: var(--light-border);
   --accent: var(--cta-orange);
@@ -45,7 +46,7 @@
   --pine: var(--primary-navy);
   --pine-soft: var(--soft-navy);
   --sage: var(--fresh-green);
-  --ring: rgba(242, 91, 30, 0.28);
+  --ring: rgba(244, 122, 31, 0.28);
 }
 
 * {
@@ -83,6 +84,23 @@ select {
   margin-inline: auto;
 }
 
+.section-pad {
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+
+.section-pad-sm {
+  padding-block: clamp(3.5rem, 6vw, 5rem);
+}
+
+.eyebrow-dot::before {
+  content: "";
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--green);
+}
+
 .star-field {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
@@ -100,8 +118,8 @@ select {
 
 .premium-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(61, 113, 35, 0.38);
-  box-shadow: 0 28px 80px rgba(22, 33, 66, 0.13);
+  border-color: rgba(47, 107, 69, 0.32);
+  box-shadow: 0 28px 80px rgba(11, 46, 74, 0.13);
 }
 
 .clip-angle {
