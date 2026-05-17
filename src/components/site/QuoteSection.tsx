@@ -11,7 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { fadeUp } from "@/components/site/motion";
+import { fadeScale, revealViewport, softReveal } from "@/components/site/motion";
 import { contactInfo, propertyTypeOptions, serviceOptions } from "@/data/site";
 
 export function QuoteSection() {
@@ -59,7 +59,7 @@ export function QuoteSection() {
   return (
     <section id="quote" className="section-pad bg-[var(--cream-bg)]">
       <div className="section-shell grid gap-8 md:grid-cols-2 xl:grid-cols-[0.85fr_1.2fr_0.95fr]">
-        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="flex flex-col justify-between">
+        <motion.div variants={softReveal} initial="hidden" whileInView="visible" viewport={revealViewport} className="flex flex-col justify-between">
           <div>
             <Badge>
               <FilledIcon name="clipboard" className="size-3.5 text-[var(--green)]" />
@@ -84,9 +84,10 @@ export function QuoteSection() {
           </div>
         </motion.div>
 
-        <Card className="premium-card cursor-default rounded-3xl border-[var(--border)] shadow-sm">
-          <CardContent className="p-6 md:p-8">
-            <form className="grid gap-4" onSubmit={handleSubmit}>
+        <motion.div variants={fadeScale} initial="hidden" whileInView="visible" viewport={revealViewport}>
+          <Card className="premium-card cursor-default rounded-3xl border-[var(--border)] shadow-sm">
+            <CardContent className="p-6 md:p-8">
+              <form className="grid gap-4" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <FormField label="Full Name" htmlFor="fullName">
                   <Input id="fullName" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={(event) => updateField("fullName", event.target.value)} />
@@ -130,20 +131,20 @@ export function QuoteSection() {
                   </p>
                 ) : null}
               </div>
-              <Button size="lg" type="submit">
+              <Button size="lg" type="submit" className="soft-sheen arrow-drift">
                 Submit Quote Request
                 <FilledIcon name="spark" />
               </Button>
-            </form>
-          </CardContent>
-        </Card>
+              </form>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         <motion.aside
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.08 }}
+          viewport={revealViewport}
           className="flex overflow-hidden rounded-3xl bg-[var(--pine)] text-white shadow-[0_24px_80px_rgba(11,46,74,0.18)]"
         >
           <div className="flex min-h-full w-full flex-col">
@@ -161,7 +162,7 @@ export function QuoteSection() {
                 src="/images/contact-representative.jpg"
                 alt="BR Lonestar team member ready to help with quote requests"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top transition duration-700 hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
               />
             </div>

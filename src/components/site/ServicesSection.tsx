@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
-import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
+import { cardHover, cardHoverTransition, fadeScale, revealViewport, softReveal, staggerContainer } from "@/components/site/motion";
 import { services } from "@/data/site";
 
 export function ServicesSection() {
@@ -15,11 +15,10 @@ export function ServicesSection() {
     <section id="services" className="section-pad bg-[var(--off-white)]">
       <div className="section-shell">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
           className="mx-auto max-w-3xl text-center"
         >
           <Badge>
@@ -35,13 +34,13 @@ export function ServicesSection() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={revealViewport}
           className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service) => (
             <motion.article
               key={service.title}
-              variants={fadeUp}
+              variants={fadeScale}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
             >
               <motion.a
@@ -64,7 +63,7 @@ export function ServicesSection() {
                     src={service.image}
                     alt={`${service.title} by BR Lonestar`}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="object-cover transition duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
                 </div>

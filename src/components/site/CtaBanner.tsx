@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Button } from "@/components/ui/button";
+import { revealViewport, softReveal } from "@/components/site/motion";
 import { contactInfo } from "@/data/site";
 
 export function CtaBanner() {
@@ -11,14 +15,20 @@ export function CtaBanner() {
         src="/images/hero-gated-community.jpg"
         alt="Premium landscaped community entrance at dusk"
         fill
-        className="object-cover"
+        className="object-cover ambient-pan"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[rgba(7,31,51,0.68)]" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,51,0.86),rgba(7,31,51,0.34))]" />
 
       <div className="section-shell relative z-10">
-        <div className="max-w-2xl">
+        <motion.div
+          variants={softReveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={revealViewport}
+          className="max-w-2xl"
+        >
           <p className="eyebrow-dot inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white/76">
             Start your project
           </p>
@@ -29,20 +39,20 @@ export function CtaBanner() {
             Let BR Lonestar keep your outdoor spaces clean, polished, reliable, and welcoming year round.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild>
+            <Button size="lg" className="soft-sheen arrow-drift" asChild>
               <a href="#quote">
                 Get Started
                 <FilledIcon name="arrow" />
               </a>
             </Button>
-            <Button variant="secondary" size="lg" asChild>
+            <Button variant="secondary" size="lg" className="arrow-drift" asChild>
               <a href={contactInfo.officeHref}>
                 Call {contactInfo.office}
                 <FilledIcon name="phone" />
               </a>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

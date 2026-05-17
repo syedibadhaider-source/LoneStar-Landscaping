@@ -43,7 +43,7 @@ export function Hero() {
               alt={slide.alt}
               fill
               priority={activeSlide === 0}
-              className="object-cover"
+              className="object-cover ambient-pan"
               sizes="100vw"
             />
           </motion.div>
@@ -56,7 +56,7 @@ export function Hero() {
         <motion.div variants={heroParent} initial="hidden" animate="visible" className="max-w-3xl">
           <motion.div
             variants={heroFadeUp}
-            className="inline-flex items-center gap-3 rounded-full border border-white/22 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/86 backdrop-blur-md"
+            className="ambient-float-slow inline-flex items-center gap-3 rounded-full border border-white/22 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/86 backdrop-blur-md"
           >
             <FilledIcon name="leaf" className="size-4 text-[var(--accent)]" />
             Professional Landscaping Services
@@ -75,13 +75,13 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={heroFadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild>
+            <Button size="lg" className="soft-sheen arrow-drift" asChild>
               <a href="#quote">
                 Get a Free Quote
                 <FilledIcon name="arrow" />
               </a>
             </Button>
-            <Button variant="secondary" size="lg" asChild>
+            <Button variant="secondary" size="lg" className="arrow-drift" asChild>
               <a href="#services">
                 View Services
                 <FilledIcon name="arrow" />
@@ -92,8 +92,12 @@ export function Hero() {
 
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: 0.45, ease: "easeOut" }}
+          animate={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: [0, -10, 0] }}
+          transition={
+            shouldReduceMotion
+              ? { duration: 0 }
+              : { opacity: { duration: 0.7, delay: 0.45, ease: "easeOut" }, y: { duration: 6.5, repeat: Infinity, ease: "easeInOut" } }
+          }
           className="absolute right-8 top-36 hidden w-64 rounded-3xl bg-white p-3 text-[var(--foreground)] shadow-[0_28px_90px_rgba(7,31,51,0.34)] lg:block"
         >
           <div className="overflow-hidden rounded-2xl bg-[var(--muted)]">

@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
-import { cardHover, cardHoverTransition, fadeUp, staggerContainer } from "@/components/site/motion";
+import { cardHover, cardHoverTransition, fadeScale, revealViewport, softReveal, staggerContainer } from "@/components/site/motion";
 import { projects } from "@/data/site";
 
 export function IndustriesSection() {
@@ -15,11 +15,10 @@ export function IndustriesSection() {
     <section id="projects" className="section-pad bg-white">
       <div className="section-shell">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
           className="mx-auto max-w-3xl text-center"
         >
           <Badge>
@@ -35,13 +34,13 @@ export function IndustriesSection() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={revealViewport}
           className="mt-12 grid gap-6 md:grid-cols-2"
         >
           {projects.map((project) => (
             <motion.article
               key={project.title}
-              variants={fadeUp}
+              variants={fadeScale}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
             >
               <motion.a
@@ -55,7 +54,7 @@ export function IndustriesSection() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="object-cover transition duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
@@ -64,7 +63,7 @@ export function IndustriesSection() {
                     <h3 className="font-heading text-xl font-bold tracking-[-0.03em] text-[var(--pine)]">{project.title}</h3>
                     <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--muted-foreground)]">{project.text}</p>
                   </div>
-                  <span className="mt-1 grid size-9 shrink-0 place-items-center rounded-full bg-[var(--green)] text-white transition group-hover:bg-[var(--accent)]">
+                  <span className="mt-1 grid size-9 shrink-0 place-items-center rounded-full bg-[var(--green)] text-white transition group-hover:bg-[var(--accent)] group-hover:translate-x-1">
                     <FilledIcon name="arrow" className="size-4" />
                   </span>
                 </div>

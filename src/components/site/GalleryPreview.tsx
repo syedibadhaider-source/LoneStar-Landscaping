@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
-import { fadeUp, staggerContainer } from "@/components/site/motion";
+import { fadeScale, revealViewport, softReveal, staggerContainer } from "@/components/site/motion";
 import { testimonials } from "@/data/site";
 
 export function GalleryPreview() {
@@ -14,11 +14,10 @@ export function GalleryPreview() {
     <section id="reviews" className="section-pad bg-[var(--off-white)]">
       <div className="section-shell">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
           className="mx-auto max-w-3xl text-center"
         >
           <Badge>
@@ -34,15 +33,15 @@ export function GalleryPreview() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={revealViewport}
           className="mt-12 grid gap-6 md:grid-cols-3"
         >
           {testimonials.map((review) => (
             <motion.article
               key={review.name}
-              variants={fadeUp}
+              variants={fadeScale}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
-              className="rounded-3xl border border-[var(--border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(11,46,74,0.1)]"
+              className="group rounded-3xl border border-[var(--border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(11,46,74,0.1)]"
             >
               <div className="flex gap-1 text-[var(--green)]">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -51,7 +50,7 @@ export function GalleryPreview() {
               </div>
               <p className="mt-5 text-sm leading-7 text-[var(--muted-foreground)]">{review.quote}</p>
               <div className="mt-6 flex items-center gap-3">
-                <span className="grid size-11 place-items-center rounded-full bg-[var(--green)] text-sm font-extrabold text-white">
+                <span className="grid size-11 place-items-center rounded-full bg-[var(--green)] text-sm font-extrabold text-white transition group-hover:scale-110 group-hover:bg-[var(--accent)]">
                   {review.name.charAt(0)}
                 </span>
                 <div>

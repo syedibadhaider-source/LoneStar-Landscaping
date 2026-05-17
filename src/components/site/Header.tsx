@@ -12,7 +12,12 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-7xl -translate-x-1/2">
+    <motion.header
+      initial={{ opacity: 0, y: -18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-7xl -translate-x-1/2"
+    >
       <div className="rounded-full border border-white/70 bg-white/92 px-4 shadow-[0_18px_60px_rgba(11,46,74,0.16)] backdrop-blur-xl sm:px-5">
         <div className="flex h-16 items-center justify-between gap-4">
           <a href="#home" className="flex shrink-0 items-center" onClick={() => setIsOpen(false)}>
@@ -49,7 +54,7 @@ export function Header() {
             >
               <FilledIcon name="phone" className="size-4" />
             </a>
-            <Button size="sm" className="px-5" asChild>
+            <Button size="sm" className="soft-sheen arrow-drift px-5" asChild>
               <a href="#quote">
                 Get Quote
                 <FilledIcon name="arrow" />
@@ -97,7 +102,7 @@ export function Header() {
               <FilledIcon name="phone" className="size-4 text-[var(--green)]" />
               Office: {contactInfo.office}
             </a>
-            <Button className="w-full" asChild>
+            <Button className="soft-sheen arrow-drift w-full" asChild>
               <a href="#quote" onClick={() => setIsOpen(false)}>
                 Get Quote
                 <FilledIcon name="arrow" />
@@ -106,6 +111,6 @@ export function Header() {
           </div>
         </motion.div>
       ) : null}
-    </header>
+    </motion.header>
   );
 }

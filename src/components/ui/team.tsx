@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
-import { fadeUp } from "@/components/site/motion";
+import { fadeScale, gentleStagger, revealViewport, softReveal } from "@/components/site/motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { teamMembers } from "@/data/site";
@@ -25,11 +25,10 @@ export function TeamSection() {
 
       <div className="section-shell relative z-10">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
           className="mx-auto mb-10 max-w-3xl text-center"
         >
           <Badge>
@@ -45,13 +44,17 @@ export function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
+        <motion.div
+          variants={gentleStagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={revealViewport}
+          className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2"
+        >
           {teamMembers.map((member) => (
             <motion.article
               key={member.name}
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              variants={fadeScale}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
               className="group flex min-h-[340px] flex-col overflow-hidden rounded-3xl border border-[var(--border)] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-[0_26px_74px_rgba(11,46,74,0.13)] md:flex-row"
             >
@@ -93,7 +96,7 @@ export function TeamSection() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

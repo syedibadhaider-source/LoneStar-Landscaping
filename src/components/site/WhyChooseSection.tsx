@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
-import { fadeUp, staggerContainer } from "@/components/site/motion";
+import { fadeScale, fadeUp, revealViewport, softReveal, staggerContainer } from "@/components/site/motion";
 
 const trustItems = [
   {
@@ -33,11 +33,10 @@ export function WhyChooseSection() {
     <section id="quality" className="section-pad bg-[var(--off-white)]">
       <div className="section-shell">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
           className="mx-auto max-w-3xl text-center"
         >
           <Badge>
@@ -53,7 +52,7 @@ export function WhyChooseSection() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={revealViewport}
           className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.25fr_0.9fr] lg:items-center"
         >
           <div className="grid gap-6">
@@ -63,7 +62,7 @@ export function WhyChooseSection() {
           </div>
 
           <motion.article
-            variants={fadeUp}
+            variants={fadeScale}
             transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
             className="overflow-hidden rounded-3xl border border-[var(--border)] bg-white p-4 shadow-[0_26px_90px_rgba(11,46,74,0.1)]"
           >
@@ -72,7 +71,7 @@ export function WhyChooseSection() {
                 src="/images/gallery-2.jpg"
                 alt="Completed landscaping with clean paths, lighting, and maintained plantings"
                 fill
-                className="object-cover"
+                className="object-cover transition duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </div>
@@ -104,11 +103,11 @@ function TrustCard({
 }) {
   return (
     <motion.article
-      variants={fadeUp}
+      variants={fadeScale}
       transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
-      className="rounded-3xl border border-[var(--border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(11,46,74,0.1)]"
+      className="group rounded-3xl border border-[var(--border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(11,46,74,0.1)]"
     >
-      <span className="grid size-11 place-items-center rounded-full bg-[var(--green)] text-white">
+      <span className="grid size-11 place-items-center rounded-full bg-[var(--green)] text-white transition group-hover:scale-110">
         <FilledIcon name="check" className="size-5" />
       </span>
       <h3 className="font-heading mt-6 text-xl font-bold tracking-[-0.03em] text-[var(--pine)]">{item.title}</h3>

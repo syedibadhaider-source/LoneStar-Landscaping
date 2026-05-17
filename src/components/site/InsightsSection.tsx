@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
-import { fadeUp, staggerContainer } from "@/components/site/motion";
+import { fadeScale, revealViewport, softReveal, staggerContainer } from "@/components/site/motion";
 import { insights } from "@/data/site";
 
 export function InsightsSection() {
@@ -15,11 +15,10 @@ export function InsightsSection() {
     <section className="section-pad bg-[var(--off-white)]">
       <div className="section-shell">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
           className="mx-auto max-w-3xl text-center"
         >
           <Badge>
@@ -35,13 +34,13 @@ export function InsightsSection() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={revealViewport}
           className="mt-12 grid gap-6 md:grid-cols-3"
         >
           {insights.map((post) => (
             <motion.article
               key={post.title}
-              variants={fadeUp}
+              variants={fadeScale}
               transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
               className="group overflow-hidden rounded-3xl border border-[var(--border)] bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(11,46,74,0.1)]"
             >
@@ -50,7 +49,7 @@ export function InsightsSection() {
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover transition duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Button } from "@/components/ui/button";
-import { fadeUp } from "@/components/site/motion";
+import { fadeScale, gentleStagger, revealViewport, softReveal } from "@/components/site/motion";
 import { faqs } from "@/data/site";
 
 export function FaqSection() {
@@ -15,11 +15,10 @@ export function FaqSection() {
     <section className="section-pad bg-[var(--off-white)]">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
         >
           <p className="eyebrow-dot inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--green)]">
             FAQ
@@ -30,7 +29,7 @@ export function FaqSection() {
           <p className="mt-5 max-w-md text-[15px] leading-7 text-[var(--muted-foreground)]">
             Have a property maintenance question? Here are quick answers before you request your custom quote.
           </p>
-          <Button className="mt-7" variant="outline" asChild>
+          <Button className="arrow-drift mt-7" variant="outline" asChild>
             <a href="#quote">
               Contact Us
               <FilledIcon name="arrow" />
@@ -39,17 +38,16 @@ export function FaqSection() {
         </motion.div>
 
         <motion.div
-          variants={fadeUp}
+          variants={gentleStagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={revealViewport}
           className="grid gap-3"
         >
           {faqs.map((item, index) => {
             const isOpen = index === openIndex;
             return (
-              <div key={item.question} className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-sm">
+              <motion.div key={item.question} variants={fadeScale} className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-[0_16px_50px_rgba(11,46,74,0.08)]">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
@@ -70,7 +68,7 @@ export function FaqSection() {
                     {item.answer}
                   </motion.p>
                 ) : null}
-              </div>
+              </motion.div>
             );
           })}
         </motion.div>

@@ -72,7 +72,7 @@ select {
 }
 
 ::selection {
-  background: rgba(61, 113, 35, 0.22);
+  background: rgba(47, 107, 69, 0.22);
 }
 
 .font-heading {
@@ -124,6 +124,75 @@ select {
 
 .clip-angle {
   clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.ambient-float {
+  animation: ambient-float 7s ease-in-out infinite;
+}
+
+.ambient-float-slow {
+  animation: ambient-float 10s ease-in-out infinite;
+}
+
+.ambient-pan {
+  animation: ambient-pan 14s ease-in-out infinite alternate;
+}
+
+.arrow-drift svg:last-child {
+  transition: transform 220ms ease;
+}
+
+.arrow-drift:hover svg:last-child {
+  transform: translateX(4px);
+}
+
+.soft-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.soft-sheen::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -65%;
+  width: 45%;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transition: left 700ms ease;
+}
+
+.soft-sheen:hover::after {
+  left: 120%;
+}
+
+@keyframes ambient-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes ambient-pan {
+  from {
+    transform: scale(1.04) translate3d(-0.75%, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(0.75%, -0.75%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 @media (max-width: 640px) {

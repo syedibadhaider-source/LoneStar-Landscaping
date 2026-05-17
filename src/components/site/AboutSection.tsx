@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { fadeUp } from "@/components/site/motion";
+import { fadeScale, fadeUp, gentleStagger, revealViewport, softReveal } from "@/components/site/motion";
 
 const stats = [
   { value: "40+", label: "Years Combined Experience" },
@@ -19,11 +19,10 @@ export function AboutSection() {
     <section id="about" className="section-pad bg-[var(--off-white)]">
       <div className="section-shell grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.58, ease: "easeOut" }}
+          viewport={revealViewport}
           className="relative overflow-hidden rounded-3xl bg-white p-3 shadow-[0_22px_80px_rgba(11,46,74,0.09)]"
         >
           <div className="relative min-h-[420px] overflow-hidden rounded-2xl bg-[var(--muted)] md:min-h-[540px]">
@@ -31,7 +30,7 @@ export function AboutSection() {
               src="/images/about-team.jpg"
               alt="BR Lonestar landscaper reviewing a maintained property with a property manager"
               fill
-              className="object-cover"
+              className="object-cover transition duration-700 hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
@@ -44,11 +43,10 @@ export function AboutSection() {
         </motion.div>
 
         <motion.div
-          variants={fadeUp}
+          variants={softReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.58, ease: "easeOut" }}
+          viewport={revealViewport}
         >
           <Badge>
             <FilledIcon name="leaf" className="size-3.5 text-[var(--green)]" />
@@ -68,17 +66,23 @@ export function AboutSection() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <motion.div
+            variants={gentleStagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={revealViewport}
+            className="mt-8 grid gap-4 sm:grid-cols-3"
+          >
             {stats.map((item) => (
-              <div key={item.label} className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm">
+              <motion.div key={item.label} variants={fadeScale} className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_52px_rgba(11,46,74,0.1)]">
                 <p className="font-heading text-3xl font-extrabold text-[var(--green)]">{item.value}</p>
                 <p className="mt-2 text-sm font-semibold leading-5 text-[var(--muted-foreground)]">{item.label}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button variant="outline" asChild>
+            <Button variant="outline" className="arrow-drift" asChild>
               <a href="#quote">
                 Request a Site Walk
                 <FilledIcon name="arrow" />
