@@ -12,8 +12,8 @@ export function CtaBanner() {
   return (
     <section className="section-pad relative overflow-hidden bg-[var(--pine)] text-white">
       <Image
-        src="/images/hero-gated-community.jpg"
-        alt="Premium landscaped community entrance at dusk"
+        src="/images/cta-lonestar-sign.png"
+        alt="BR Lonestar Landscaping entrance sign at night"
         fill
         className="object-cover ambient-pan"
         sizes="100vw"

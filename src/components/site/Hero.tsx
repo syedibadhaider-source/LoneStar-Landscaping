@@ -70,7 +70,7 @@ export function Hero() {
             {slide.headline}
           </motion.h1>
 
-          <motion.p key={slide.text} variants={heroFadeUp} className="mt-5 max-w-lg text-[15px] font-normal leading-7 text-white/80 md:text-[17px]">
+          <motion.p key={slide.text} variants={heroFadeUp} className="mt-5 max-w-lg text-[15px] font-light leading-7 text-white/80 md:text-[17px]">
             {slide.text}
           </motion.p>
 

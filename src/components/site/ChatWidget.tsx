@@ -32,7 +32,7 @@ export function ChatWidget() {
                 href={contactInfo.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between gap-4 rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(244,122,31,0.28)]"
+                className="flex items-center justify-between gap-4 rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(244,122,31,0.28)]"
               >
                 <span className="flex items-center gap-3">
                   <FilledIcon name="chat" className="size-5" />
@@ -43,7 +43,7 @@ export function ChatWidget() {
               <a
                 href="#quote"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--off-white)] px-4 py-3 text-sm font-extrabold text-[var(--pine)] transition hover:-translate-y-0.5 hover:border-[var(--green)] hover:bg-white"
+                className="flex items-center justify-between gap-4 rounded-xl border border-[var(--border)] bg-[var(--off-white)] px-4 py-3 text-sm font-medium text-[var(--pine)] transition hover:-translate-y-0.5 hover:border-[var(--green)] hover:bg-white"
               >
                 <span className="flex items-center gap-3">
                   <FilledIcon name="clipboard" className="size-5 text-[var(--green)]" />

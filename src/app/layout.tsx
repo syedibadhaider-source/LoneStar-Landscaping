@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Sora } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+const poppinsBody = Poppins({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "500", "600"],
 });
 
-const sora = Sora({
+const poppinsHeading = Poppins({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["500", "600", "700", "800"],
+  weight: ["300", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jakarta.variable} ${sora.variable}`}>{children}</body>
+      <body className={`${poppinsBody.variable} ${poppinsHeading.variable}`}>{children}</body>
     </html>
   );
 }
