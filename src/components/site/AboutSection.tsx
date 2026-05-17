@@ -1,25 +1,88 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView, useReducedMotion, type Variants } from "framer-motion";
 
 import { FilledIcon } from "@/components/site/FilledIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { fadeScale, fadeUp, gentleStagger, revealViewport, softReveal } from "@/components/site/motion";
+import { fadeScale, gentleStagger, revealViewport } from "@/components/site/motion";
 
 const stats = [
-  { value: "40+", label: "Years Combined Experience" },
-  { value: "24hr", label: "Quote Response Focus" },
-  { value: "100%", label: "Managed Property Mindset" },
+  { value: 40, suffix: "+", label: "Years Combined Experience" },
+  { value: 24, suffix: "hr", label: "Quote Response Focus" },
+  { value: 100, suffix: "%", label: "Managed Property Mindset" },
 ];
+
+const imageSlideIn: Variants = {
+  hidden: { opacity: 0, x: -78, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.92, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const contentSlideIn: Variants = {
+  hidden: { opacity: 0, x: 78, filter: "blur(12px)" },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.92, ease: [0.22, 1, 0.36, 1], staggerChildren: 0.08 },
+  },
+};
+
+function CountUpStat({ value, suffix }: { value: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const shouldReduceMotion = useReducedMotion();
+  const [count, setCount] = useState(shouldReduceMotion ? value : 0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    if (shouldReduceMotion) {
+      setCount(value);
+      return;
+    }
+
+    let frameId = 0;
+    const duration = 1100;
+    const startedAt = performance.now();
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startedAt) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+
+      setCount(Math.round(eased * value));
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(tick);
+      }
+    };
+
+    frameId = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(frameId);
+  }, [isInView, shouldReduceMotion, value]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
+}
 
 export function AboutSection() {
   return (
     <section id="about" className="section-pad bg-[var(--off-white)]">
       <div className="section-shell grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
         <motion.div
-          variants={softReveal}
+          variants={imageSlideIn}
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
@@ -43,7 +106,7 @@ export function AboutSection() {
         </motion.div>
 
         <motion.div
-          variants={softReveal}
+          variants={contentSlideIn}
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
@@ -74,9 +137,15 @@ export function AboutSection() {
             className="mt-8 grid gap-4 sm:grid-cols-3"
           >
             {stats.map((item) => (
-              <motion.div key={item.label} variants={fadeScale} className="rounded-2xl border border-[var(--border)] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_18px_52px_rgba(11,46,74,0.1)]">
-                <p className="font-heading text-3xl font-extrabold text-[var(--green)]">{item.value}</p>
-                <p className="mt-2 text-sm font-semibold leading-5 text-[var(--muted-foreground)]">{item.label}</p>
+              <motion.div
+                key={item.label}
+                variants={fadeScale}
+                className="rounded-2xl border border-white/10 bg-[var(--pine)] p-5 shadow-[0_18px_52px_rgba(11,46,74,0.16)] transition hover:-translate-y-1 hover:bg-[var(--pine-soft)] hover:shadow-[0_22px_60px_rgba(11,46,74,0.22)]"
+              >
+                <p className="font-heading text-3xl font-semibold text-[var(--accent)]">
+                  <CountUpStat value={item.value} suffix={item.suffix} />
+                </p>
+                <p className="mt-2 text-sm font-light leading-5 text-white/90">{item.label}</p>
               </motion.div>
             ))}
           </motion.div>
