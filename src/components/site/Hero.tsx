@@ -49,32 +49,32 @@ export function Hero() {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,51,0.92)_0%,rgba(7,31,51,0.72)_38%,rgba(7,31,51,0.16)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(0deg,rgba(7,31,51,0.72),transparent)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,51,0.88)_0%,rgba(7,31,51,0.68)_34%,rgba(7,31,51,0.08)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-[linear-gradient(0deg,rgba(7,31,51,0.78),transparent)]" />
 
-      <div className="section-shell relative z-10 flex min-h-[760px] items-end pb-24 pt-32 md:min-h-[860px] md:pb-28">
-        <motion.div variants={heroParent} initial="hidden" animate="visible" className="max-w-3xl">
+      <div className="section-shell relative z-10 flex min-h-[760px] items-end pb-20 pt-32 md:min-h-[860px] md:pb-24">
+        <motion.div variants={heroParent} initial="hidden" animate="visible" className="max-w-2xl">
           <motion.div
             variants={heroFadeUp}
-            className="ambient-float-slow inline-flex items-center gap-3 rounded-full border border-white/22 bg-white/8 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white/86 backdrop-blur-md"
+            className="ambient-float-slow inline-flex items-center gap-3 rounded-full border border-white/22 bg-white/8 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/86 backdrop-blur-md"
           >
             <FilledIcon name="leaf" className="size-4 text-[var(--accent)]" />
-            Professional Landscaping Services
+            {slide.label}
           </motion.div>
 
           <motion.h1
+            key={slide.headline}
             variants={heroFadeUp}
-            className="font-heading mt-7 max-w-3xl text-[46px] font-extrabold leading-[0.98] tracking-[-0.05em] text-white sm:text-[64px] lg:text-[82px]"
+            className="font-heading mt-6 max-w-2xl text-[36px] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[62px]"
           >
-            Your Property.
-            <span className="block text-[var(--accent)]">Perfectly Maintained.</span>
+            {slide.headline}
           </motion.h1>
 
-          <motion.p variants={heroFadeUp} className="mt-7 max-w-xl text-base leading-8 text-white/82 md:text-lg">
-            Professional landscaping and property maintenance that keeps every exterior looking its best.
+          <motion.p key={slide.text} variants={heroFadeUp} className="mt-5 max-w-lg text-[15px] font-normal leading-7 text-white/80 md:text-[17px]">
+            {slide.text}
           </motion.p>
 
-          <motion.div variants={heroFadeUp} className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <motion.div variants={heroFadeUp} className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button size="lg" className="soft-sheen arrow-drift" asChild>
               <a href="#quote">
                 Get a Free Quote

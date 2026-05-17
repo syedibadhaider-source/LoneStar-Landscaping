@@ -41,22 +41,25 @@ export const propertyTypes: IconItem[] = [
 
 export const heroSlides = [
   {
-    image: "/images/hero-landscape.jpg",
-    alt: "Luxury property exterior at dusk with maintained landscaping, warm lighting, pathways, and colorful flowers",
-    label: "Full Maintenance Plans",
-    text: "HOA entrances, common areas, and grounds kept clean year round.",
+    image: "/images/hero-lawn-care.png",
+    alt: "BR Lonestar team member on a mower maintaining a premium lawn at sunset",
+    label: "Premium Lawn Care",
+    headline: "Premium Lawn Care for a Healthier Property",
+    text: "Sharp mowing, clean edges, and year-round lawn care.",
   },
   {
-    image: "/images/hero-commercial.jpg",
-    alt: "Modern commercial office property with maintained lawns, hedges, flower beds, and walkways",
-    label: "Commercial Property Care",
-    text: "Sharp lawns, seasonal color, irrigation, and site-ready curb appeal.",
+    image: "/images/hero-landscape-design.png",
+    alt: "BR Lonestar crew installing custom landscape planting along a luxury property pathway",
+    label: "Landscape Design",
+    headline: "Custom Landscapes Built to Impress",
+    text: "Elegant designs, fresh planting, and expert installation.",
   },
   {
-    image: "/images/hero-gated-community.jpg",
-    alt: "Upscale gated community entrance with manicured turf, trimmed shrubs, flowers, and landscape lighting",
-    label: "Gated Community Landscaping",
-    text: "Premium entrances, pathways, beds, and lighting maintained with care.",
+    image: "/images/hero-irrigation-care.png",
+    alt: "BR Lonestar irrigation and outdoor care crew working at dusk with sprinklers and landscape lighting",
+    label: "Irrigation & Care",
+    headline: "Smart Irrigation & Outdoor Care",
+    text: "Efficient watering, seasonal cleanup, and complete maintenance.",
   },
 ];
 
